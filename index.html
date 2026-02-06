@@ -1,57 +1,57 @@
 <!DOCTYPE html><html lang="en" data-scrapbook-source="https://staking-polygon-site.github.io/" data-scrapbook-create="20260204133928277" data-scrapbook-title="Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <!-- SEO / EEAT Meta Tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)</title>
-  <meta name="description" content="Staking Polygon (POL) guide (2026): how Polygon staking works, rewards and real yield, APY vs APR, how to stake step-by-step, validator list criteria, minimum POL, calculator framework, best practices, risks, safety checks, comparisons vs liquid staking, and troubleshooting. Includes KPIs, runbook, and a deep FAQ.">
+  <title>Arbitrum Nova — Bridge, Fees, Wallet Setup, RPC, Security (AnyTrust), Explorer & Troubleshooting (2026)</title>
+  <meta name="description" content="Arbitrum Nova guide (2026): what Nova is (AnyTrust), how bridging works, wallet setup, fees and cost drivers, RPC endpoints, explorers, safety checklist, best practices, comparisons vs Arbitrum One, and troubleshooting. Includes KPIs, runbook, and a deep FAQ.">
   <meta name="author" content="Crypto Finance Experts">
-  <link rel="canonical" href="https://staking-polygon.example.com/">
+  <link rel="canonical" href="https://arbitrum-nova.example.com/">
 
   <!-- Favicon (use your local file) -->
-  <link rel="icon" type="image/png" href="polygon-logo-png_seeklogo-527156.png">
+  <link rel="icon" type="image/png" href="arbitrum-arb-logo.png">
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://staking-polygon.example.com/">
-  <meta property="og:title" content="Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)">
-  <meta property="og:description" content="Practical Staking Polygon (POL) guide: rewards, APY/APR, validator selection, safety checklist, calculator framework, and troubleshooting.">
-  <meta property="og:image" content="cover.png">
+  <meta property="og:url" content="https://arbitrum-nova.example.com/">
+  <meta property="og:title" content="Arbitrum Nova — Bridge, Fees, Wallet Setup, RPC, Security (AnyTrust), Explorer & Troubleshooting (2026)">
+  <meta property="og:description" content="Practical Arbitrum Nova guide: bridge, fees, wallet setup, RPC, explorer, security checklist, and troubleshooting.">
+  <meta property="og:image" content="arbnova.png">
 
   <!-- Twitter Card -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://staking-polygon.example.com/">
-  <meta property="twitter:title" content="Staking Polygon (POL) — Rewards, APY/APR, Validators, Calculator, Safety &amp; Troubleshooting (2026)">
-  <meta property="twitter:description" content="Deep Polygon staking guide: yield drivers, validator criteria, minimum POL, best practices, and risks in 2025–2026.">
-  <meta property="twitter:image" content="cover.png">
+  <meta property="twitter:url" content="https://arbitrum-nova.example.com/">
+  <meta property="twitter:title" content="Arbitrum Nova — Bridge, Fees, Wallet Setup, RPC, Security (AnyTrust) & Troubleshooting (2026)">
+  <meta property="twitter:description" content="Deep Arbitrum Nova guide: AnyTrust security model, bridging, fees, RPC, explorers, safety best practices, and FAQs.">
+  <meta property="twitter:image" content="arbnova.png">
 
   <style>
     :root{
-      /* Black–Purple Theme */
-      --primary:#A855F7;       /* purple-500 */
-      --primary-600:#9333EA;   /* purple-600 */
-      --primary-700:#7E22CE;   /* purple-700 */
-      --accent:#22D3EE;        /* cyan accent for tiny highlights */
+      /* Blue–White Theme (Arbitrum-inspired) */
+      --primary:#2563EB;        /* blue-600 */
+      --primary-600:#1D4ED8;    /* blue-700 */
+      --primary-700:#1E40AF;    /* blue-800 */
+      --accent:#06B6D4;         /* cyan accent */
 
-      --ink:#F8FAFC;           /* near-white text */
-      --muted:#A1A1AA;         /* zinc-400 */
-      --muted-2:#71717A;       /* zinc-500 */
+      --ink:#0F172A;            /* slate-900 */
+      --muted:#475569;          /* slate-600 */
+      --muted-2:#64748B;        /* slate-500 */
 
-      --bg:#070712;            /* deep black/purple */
-      --panel:#0B0B18;
-      --panel-2:#0F0F24;
-      --line:rgba(255,255,255,.10);
+      --bg:#F5F8FF;             /* soft blue-white */
+      --panel:#FFFFFF;
+      --panel-2:#F8FBFF;
+      --line:rgba(15,23,42,.10);
 
-      --ok:#22C55E;
+      --ok:#16A34A;
       --warn:#F59E0B;
-      --error:#EF4444;
+      --error:#DC2626;
 
-      --shadow: 0 18px 44px rgba(0,0,0,.55);
+      --shadow: 0 18px 44px rgba(2,6,23,.12);
       --radius:14px;
       --radius-sm:10px;
       --radius-lg:22px;
@@ -66,10 +66,10 @@
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
       color:var(--muted);
       background:
-        radial-gradient(900px 600px at 15% 0%, rgba(168,85,247,.22), transparent 60%),
-        radial-gradient(900px 600px at 90% 10%, rgba(34,211,238,.10), transparent 60%),
-        radial-gradient(900px 600px at 55% 85%, rgba(126,34,206,.16), transparent 60%),
-        linear-gradient(180deg, #050510 0%, #070712 45%, #050510 100%);
+        radial-gradient(900px 600px at 12% 0%, rgba(37,99,235,.14), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(6,182,212,.12), transparent 60%),
+        radial-gradient(900px 600px at 55% 85%, rgba(30,64,175,.10), transparent 60%),
+        linear-gradient(180deg, #FFFFFF 0%, var(--bg) 45%, #FFFFFF 100%);
       line-height:1.65;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -93,19 +93,19 @@
       padding-top:.6rem;
       border-top:1px solid var(--line);
     }
-    h3{font-size:clamp(1.05rem,2.2vw,1.3rem); color:#EDE9FE}
+    h3{font-size:clamp(1.05rem,2.2vw,1.3rem); color:#0B2A6B}
 
     p,li,td,th{font-size:1rem}
-    .lead{font-size:1.125rem; color:#E5E7EB}
+    .lead{font-size:1.125rem; color:#0F172A}
     .muted{color:var(--muted)}
     .muted-2{color:var(--muted-2)}
 
     header.hero{
       padding: clamp(2rem,6vw,4rem) 0;
       background:
-        radial-gradient(700px 420px at 18% 10%, rgba(168,85,247,.25), transparent 60%),
-        radial-gradient(700px 420px at 90% 20%, rgba(34,211,238,.12), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0) 55%);
+        radial-gradient(700px 420px at 18% 10%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(700px 420px at 90% 20%, rgba(6,182,212,.14), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,.04), rgba(2,6,23,0) 55%);
       border-bottom:1px solid var(--line);
     }
 
@@ -117,7 +117,7 @@
     }
 
     .hero-card{
-      background: linear-gradient(180deg, rgba(15,15,36,.82), rgba(11,11,24,.68));
+      background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,251,255,.85));
       border:1px solid var(--line);
       border-radius:var(--radius-lg);
       padding:clamp(1rem,3vw,1.75rem);
@@ -131,10 +131,10 @@
       height:54px;
       border-radius:14px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.06);
+      background:rgba(37,99,235,.06);
       padding:.35rem;
       object-fit:contain;
-      box-shadow: 0 10px 22px rgba(0,0,0,.35);
+      box-shadow: 0 10px 22px rgba(2,6,23,.10);
       flex:0 0 auto;
     }
 
@@ -147,10 +147,10 @@
       border-radius:12px;
       font-weight:900;
       letter-spacing:.2px;
-      box-shadow:0 14px 32px rgba(168,85,247,.28);
-      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 14px 32px rgba(37,99,235,.22);
+      border:1px solid rgba(255,255,255,.25);
     }
-    .cta:hover{filter:brightness(1.05); text-decoration:none}
+    .cta:hover{filter:brightness(1.03); text-decoration:none}
     .cta.secondary{
       background:transparent;
       border:1px solid var(--line);
@@ -162,9 +162,9 @@
     .note{
       border-left:3px solid var(--primary);
       padding:.75rem 1rem;
-      background:rgba(168,85,247,.10);
+      background:rgba(37,99,235,.06);
       border-radius:10px;
-      color:#E5E7EB;
+      color:#0F172A;
     }
 
     .hero-media{
@@ -181,7 +181,7 @@
       max-height:520px;
       border-radius:var(--radius-lg);
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.75);
       box-shadow:var(--shadow);
       padding:.25rem;
     }
@@ -200,7 +200,7 @@
       max-height:420px;
       border-radius:var(--radius);
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.75);
       box-shadow:var(--shadow);
       padding:.25rem;
     }
@@ -208,31 +208,31 @@
     section.step-guide{padding: clamp(2rem,6vw,3.5rem) 0}
     .steps{display:grid; gap:var(--gap); grid-template-columns:1fr;}
     .step{
-      background:linear-gradient(180deg, rgba(15,15,36,.78), rgba(11,11,24,.62));
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,251,255,.86));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.2rem;
-      box-shadow: 0 12px 26px rgba(0,0,0,.45);
+      box-shadow: 0 12px 26px rgba(2,6,23,.10);
       transition:transform .2s ease, box-shadow .2s ease;
     }
-    .step:hover{transform:translateY(-4px); box-shadow:0 18px 34px rgba(0,0,0,.55)}
+    .step:hover{transform:translateY(-4px); box-shadow:0 18px 34px rgba(2,6,23,.14)}
     .step .icon{
       width:54px;height:54px;border-radius:50%;
       display:inline-grid; place-items:center;
-      background:rgba(168,85,247,.18);
+      background:rgba(37,99,235,.10);
       margin-bottom:.6rem;
-      color:#EDE9FE;
+      color:#0B2A6B;
       font-weight:950;
-      border:1px solid rgba(255,255,255,.10);
+      border:1px solid rgba(15,23,42,.10);
     }
 
     main .card{
-      background:linear-gradient(180deg, rgba(15,15,36,.70), rgba(11,11,24,.58));
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(248,251,255,.86));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.25rem;
       margin:1.25rem 0;
-      box-shadow: 0 12px 26px rgba(0,0,0,.45);
+      box-shadow: 0 12px 26px rgba(2,6,23,.10);
     }
 
     .grid-2{display:grid; gap:var(--gap); grid-template-columns:1fr;}
@@ -242,43 +242,43 @@
     }
     .pill{
       border:1px solid var(--line);
-      background:rgba(255,255,255,.05);
+      background:rgba(37,99,235,.05);
       padding:.4rem .65rem;
       border-radius:999px;
       font-weight:800;
-      color:#E5E7EB;
+      color:#0F172A;
       box-shadow:none;
     }
 
     .toc{
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(168,85,247,.10), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(37,99,235,.06), rgba(255,255,255,.75));
       border-radius:var(--radius);
       padding:1rem;
     }
-    .toc strong{color:#F1F5F9}
+    .toc strong{color:#0F172A}
     .toc ul{margin:.5rem 0 0; padding-left:1.1rem}
     .toc li{margin:.25rem 0}
-    .toc a{font-weight:800}
+    .toc a{font-weight:900}
 
     table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:12px}
     th,td{padding:.9rem; border-bottom:1px solid var(--line)}
     th{
-      background:rgba(168,85,247,.10);
-      color:#F8FAFC;
+      background:rgba(37,99,235,.08);
+      color:#0F172A;
       text-align:left
     }
-    tr.highlight{background:rgba(168,85,247,.08)}
-    tr:hover{background:rgba(255,255,255,.03)}
+    tr.highlight{background:rgba(37,99,235,.05)}
+    tr:hover{background:rgba(2,6,23,.02)}
 
     .ok{color:var(--ok)} .warn{color:var(--warn)} .err{color:var(--error)}
 
     .eeat{
-      background:linear-gradient(180deg, rgba(168,85,247,.10), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(37,99,235,.06), rgba(255,255,255,.75));
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1.25rem;
-      box-shadow: 0 12px 26px rgba(0,0,0,.45);
+      box-shadow: 0 12px 26px rgba(2,6,23,.10);
     }
 
     .faq-item{border-bottom:1px solid var(--line); padding: .9rem 0}
@@ -290,7 +290,7 @@
     .faq-button h3{margin:0; font-weight:950}
     .faq-content{max-height:0; overflow:hidden; transition:max-height .25s ease}
     .faq-content.open{padding-top:.6rem}
-    .faq-plus{font-weight:950; color:#EDE9FE}
+    .faq-plus{font-weight:950; color:#0B2A6B}
 
     .cta-center{
       display:flex;
@@ -305,11 +305,11 @@
     }
     .badge{
       border:1px solid var(--line);
-      background:rgba(34,211,238,.06);
+      background:rgba(6,182,212,.08);
       padding:.35rem .6rem;
       border-radius:999px;
       font-weight:900;
-      color:#E5E7EB;
+      color:#0F172A;
     }
 
     .callout-grid{
@@ -319,7 +319,7 @@
       margin-top: .75rem;
     }
     .mini{
-      background:rgba(255,255,255,.03);
+      background:rgba(2,6,23,.02);
       border:1px solid var(--line);
       border-radius:var(--radius);
       padding:1rem;
@@ -329,13 +329,24 @@
       display:flex; flex-wrap:wrap; gap:.55rem; margin-top:.5rem;
     }
     .kpi-badges span{
-      border:1px solid rgba(168,85,247,.22);
-      background:rgba(168,85,247,.07);
-      color:#EDE9FE;
+      border:1px solid rgba(37,99,235,.20);
+      background:rgba(37,99,235,.06);
+      color:#0F172A;
       padding:.3rem .55rem;
       border-radius:999px;
       font-weight:900;
       font-size:.9rem;
+    }
+
+    code, .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+    .inline-code{
+      display:inline-block;
+      padding:.15rem .35rem;
+      border-radius:8px;
+      border:1px solid var(--line);
+      background:rgba(2,6,23,.03);
+      color:#0F172A;
+      font-weight:800;
     }
 
     @media (min-width: 860px){
@@ -353,72 +364,74 @@
   <div class="container hero-grid">
     <div class="hero-card" aria-label="Intro">
       <div class="brand-row">
-        <img class="brand-logo" src="polygon-logo-png_seeklogo-527156.png" alt="Staking Polygon logo">
+        <img class="brand-logo" src="arbitrum-arb-logo.png" alt="Arbitrum logo">
         <div>
           <div class="muted" style="font-weight:900; letter-spacing:.2px;">Operational Guide</div>
-          <div class="muted-2" style="font-size:.95rem;">Rewards • APY/APR • Validators • Calculator • Safety</div>
+          <div class="muted-2" style="font-size:.95rem;">Bridge • Fees • Wallet Setup • RPC • Security • Troubleshooting</div>
         </div>
       </div>
 
-      <h1>Staking Polygon (POL)</h1>
+      <h1>Arbitrum Nova</h1>
       <p class="lead">
-        This is a practical, security-first guide to <strong>Staking Polygon (POL)</strong>: how staking works end-to-end,
-        what drives rewards, how to compare <strong>APY vs APR</strong>, how to choose validators, how to estimate yield with
-        a calculator framework, and how to avoid the common mistakes that cause lost time (or lost funds).
+        This is a practical, security-first guide to <strong>Arbitrum Nova</strong>: what Nova is and what it’s optimized for,
+        how to bridge safely, how fees work, how to add the network to your wallet, which RPC endpoints and explorers to use,
+        and how to avoid the common mistakes that cause stuck transfers or lost funds.
       </p>
 
-
       <div class="cta-center">
-        <a href="https://staking-polygon.com/" class="cta" aria-label="Open Polygon Staking (placeholder)">Open Polygon Staking</a>
+        <a href="https://portal.arbitrum.io/bridge" class="cta" aria-label="Open Arbitrum Bridge">Open Arbitrum Bridge</a>
+        <a href="#how-to" class="cta secondary" aria-label="Jump to setup">Wallet Setup</a>
       </div>
 
       <div class="note" style="margin-top:1rem;">
-        <strong>Quick rule:</strong> If you’re staking meaningful size, do a small test delegation first,
-        then scale in. Staking is operational: validator choice, unbonding rules, and wallet hygiene matter.
+        <strong>Quick rule:</strong> When bridging meaningful size, do a small test transfer first, then scale in.
+        Most losses come from fake sites, wrong network selection, or rushing approvals.
+      </div>
+
+      <div class="badge-row" aria-label="Nova quick facts">
+        <span class="badge">L2 execution</span>
+        <span class="badge">AnyTrust (DAC-based DA)</span>
+        <span class="badge">Chain ID: 42170</span>
+        <span class="badge">Gas token: ETH</span>
       </div>
     </div>
 
     <div class="hero-media" aria-hidden="true">
-      <!-- First top image -->
-      <img class="hero-img" src="snimok-ekrana-2022-01-25-v-16.10.24.png" alt="Staking Polygon overview visual">
+      <img class="hero-img" src="arbnova.png" alt="Arbitrum Nova hero visual">
     </div>
   </div>
 </header>
 
 <section class="step-guide" aria-labelledby="how-works">
   <div class="container">
-    <h2 id="how-works">Staking Polygon (POL): How the Workflow Works (Choose → Delegate → Earn → Unstake)</h2>
+    <h2 id="how-works">Arbitrum Nova: The Practical Workflow (Add → Fund → Use → Monitor → Exit)</h2>
     <div class="steps" role="list">
       <article class="step" role="listitem">
         <div class="icon">①</div>
-        <h3>Choose a staking method (native vs liquid staking)</h3>
+        <h3>Add Nova to your wallet</h3>
         <p>
-          Decide if you want native delegation (more “direct”, but with lock/unbond rules) or liquid staking
-          (more flexibility, but extra smart-contract and peg/liquidity considerations).
+          Configure your wallet to use Arbitrum Nova. Verify network details (RPC + chain ID) from official docs before you add.
         </p>
       </article>
       <article class="step" role="listitem">
         <div class="icon">②</div>
-        <h3>Select validators (the real risk/return lever)</h3>
+        <h3>Bridge ETH safely (test first)</h3>
         <p>
-          Your validator choice drives uptime risk, slashing exposure, commission drag, and reliability.
-          “Highest APY” is not a strategy if the operator is unstable or opaque.
+          Use the official Arbitrum bridge or a reputable bridge/aggregator. Always do a small test transfer first.
         </p>
       </article>
       <article class="step" role="listitem">
         <div class="icon">③</div>
-        <h3>Delegate and track rewards (net yield matters)</h3>
+        <h3>Use apps & track fees</h3>
         <p>
-          Rewards are not just “APR”: net yield depends on commission, compounding cadence, and any extra
-          fees/constraints. Track realized outcomes, not only quotes.
+          Nova targets low fees and high throughput. Understand cost drivers (L1 data posting vs AnyTrust DA) and keep gas buffer.
         </p>
       </article>
       <article class="step" role="listitem">
         <div class="icon">④</div>
-        <h3>Unstake safely (timelines, claims, and mistakes)</h3>
+        <h3>Monitor & exit cleanly</h3>
         <p>
-          The exit path is part of the plan: understand unbonding delays, claim steps, and how long capital is illiquid.
-          Most “stuck” issues come from missing exit steps or network mismatch.
+          Use an explorer to verify status. When exiting, understand bridge timelines and finality assumptions.
         </p>
       </article>
     </div>
@@ -428,145 +441,180 @@
 <main class="container" role="main">
 
   <section class="card toc" aria-label="Table of Contents">
-    <strong>On this page (Staking Polygon):</strong>
+    <strong>On this page (Arbitrum Nova):</strong>
     <ul>
-      <li><a href="#overview">Staking Polygon overview (what it is &amp; who it’s for)</a></li>
-      <li><a href="#rewards">Polygon staking rewards: what drives yield</a></li>
-      <li><a href="#apy-apr">Polygon staking APY / APR: how to compare correctly</a></li>
-      <li><a href="#how-to">How to stake Polygon (POL): step-by-step tutorial</a></li>
-      <li><a href="#calculator">Polygon staking calculator: estimation framework</a></li>
-      <li><a href="#validators">Polygon validator list: selection checklist</a></li>
-      <li><a href="#minimum">Polygon staking minimum POL required</a></li>
-      <li><a href="#yield">Polygon staking yield: compounding &amp; net return</a></li>
-      <li><a href="#review">Staking Polygon review: legit, trust, and what to watch</a></li>
-      <li><a href="#safety">Is staking Polygon safe? risks &amp; rewards</a></li>
-      <li><a href="#comparison">Staking Polygon comparison vs liquid staking</a></li>
-      <li><a href="#best-practices">Best way to stake Polygon: best practices</a></li>
-      <li><a href="#troubleshooting">Troubleshooting &amp; common issues</a></li>
-      <li><a href="#eeat">Sources &amp; references</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#overview">Arbitrum Nova overview (what it is & who it’s for)</a></li>
+      <li><a href="#security-model">Nova security model (AnyTrust / DAC) in plain English</a></li>
+      <li><a href="#fees">Fees on Nova: what drives cost and why it changes</a></li>
+      <li><a href="#how-to">How to add Arbitrum Nova to MetaMask (and any wallet)</a></li>
+      <li><a href="#bridge">How to bridge to Arbitrum Nova safely (step-by-step)</a></li>
+      <li><a href="#calculator">Nova fee & bridge cost calculator: estimation framework</a></li>
+      <li><a href="#rpc">RPC endpoints & reliability checklist</a></li>
+      <li><a href="#explorers">Explorers (Nova Arbiscan / Blockscout) + how to verify txs</a></li>
+      <li><a href="#minimum">Minimum ETH needed on Nova (practical gas buffer)</a></li>
+      <li><a href="#comparison">Comparison: Nova vs Arbitrum One (and when to use each)</a></li>
+      <li><a href="#best-practices">Best practices: security, approvals, operational hygiene</a></li>
+      <li><a href="#troubleshooting">Troubleshooting & common issues</a></li>
+      <li><a href="#eeat">Authoritative sources & references (EEAT)</a></li>
+      <li><a href="#faq">Deep FAQ</a></li>
     </ul>
   </section>
 
   <section class="card" id="overview">
-    <h2>Staking Polygon Overview: What It Is, and Why People Stake POL</h2>
+    <h2>Arbitrum Nova Overview: What It Is, and Why People Use It</h2>
     <p>
-      <strong>Staking Polygon (POL)</strong> generally means committing POL to help secure network operations (directly or via delegation),
-      earning rewards in return. The trade-off is simple: you exchange liquidity and operational attention
-      (validator selection + rules) for yield and network participation.
+      <strong>Arbitrum Nova</strong> is an Arbitrum L2 built for low fees and high-throughput use-cases (social apps, gaming, high-volume consumer activity).
+      Nova uses an <strong>AnyTrust</strong>-style data availability design: execution settles back to Ethereum, while data availability is handled via a
+      <strong>Data Availability Committee (DAC)</strong> rather than always posting full data to L1.
     </p>
 
     <div class="callout-grid" role="list">
       <div class="mini" role="listitem">
         <h3>Best use-case</h3>
         <p class="muted">
-          Long-term holders who want yield and can tolerate lock/unbond timelines.
+          High-volume, cost-sensitive apps where you want very low transaction fees and smooth UX.
         </p>
         <div class="kpi-badges">
-          <span>Long-term</span><span>Yield-focused</span><span>Risk-managed</span>
+          <span>Low fees</span><span>High throughput</span><span>Consumer apps</span>
         </div>
       </div>
 
       <div class="mini" role="listitem">
-        <h3>Main constraints</h3>
+        <h3>Main trade-off</h3>
         <p class="muted">
-          Unbonding delay, validator/operator risk, and the need for careful wallet hygiene.
+          Nova’s DA relies on a DAC trust assumption (AnyTrust model). Understand this before moving meaningful value.
         </p>
         <div class="kpi-badges">
-          <span>Illiquidity</span><span>Operator risk</span><span>Process matters</span>
+          <span>AnyTrust DA</span><span>DAC assumption</span><span>Know the model</span>
         </div>
       </div>
     </div>
 
     <div class="note" style="margin-top:1rem;">
-      <strong>Operational truth:</strong> the “best” staking setup is the one you can exit safely.
-      Always plan the unstake path before you stake.
+      <strong>Operational truth:</strong> “Cheap” networks still require careful process. Use official links, keep a gas buffer,
+      and verify transactions in an explorer when anything looks off.
     </div>
 
     <div class="content-media">
-      <!-- Second image -->
-      <img class="content-img" src="poly2.png" alt="Staking Polygon checklist visual">
+      <img class="content-img" src="arbnova2.png" alt="Arbitrum Nova overview visual">
     </div>
   </section>
 
-  <section class="card" id="rewards">
-    <h2>Polygon Staking Rewards: What Drives Rewards and Why They Change</h2>
+  <section class="card" id="security-model">
+    <h2>Nova Security Model: AnyTrust / DAC (Simple Explanation)</h2>
     <p>
-      <strong>Polygon staking rewards</strong> vary over time. Your realized outcome depends on network conditions and
-      your validator’s behavior (commission, uptime, performance), plus how you compound.
+      Arbitrum Nova uses an <strong>AnyTrust</strong> approach to reduce fees. In plain terms:
+      execution is still enforced by Ethereum-based settlement logic, but <strong>data availability</strong>
+      is handled by a <strong>Data Availability Committee (DAC)</strong> instead of always publishing full transaction data to Ethereum.
     </p>
+
+    <h3>What this means in practice</h3>
     <ul>
-      <li><strong>Validator commission:</strong> your rewards are reduced by the operator’s cut.</li>
-      <li><strong>Uptime/performance:</strong> instability reduces rewards and can increase risk.</li>
-      <li><strong>Compounding cadence:</strong> auto-compound vs manual compounding changes net APY.</li>
-      <li><strong>Operational fees:</strong> some paths require extra transactions (claim/compound/unstake).</li>
+      <li><strong>Lower costs:</strong> less data posted to L1 can reduce fees.</li>
+      <li><strong>Different risk:</strong> you add a data-availability trust assumption versus “full DA on L1”.</li>
+      <li><strong>Operational impact:</strong> for typical users, the main actions remain the same (bridge, use apps, verify in explorer).</li>
     </ul>
 
     <div class="note">
-      <strong>Rule:</strong> Treat quoted yield as “gross”. Track net yield after commission + fees + missed time (downtime/unbond).
+      <strong>Practical takeaway:</strong> Keep your “meaningful value” risk-managed (split across wallets/strategies),
+      and prefer official tooling and reputable apps.
     </div>
   </section>
 
-  <section class="card" id="apy-apr">
-    <h2>Polygon Staking APY / APR: How to Compare Without Getting Tricked</h2>
+  <section class="card" id="fees">
+    <h2>Fees on Arbitrum Nova: What Drives Cost and Why It Changes</h2>
     <p>
-      <strong>APR</strong> is typically the “simple rate” (no compounding assumption).
-      <strong>APY</strong> includes a compounding assumption (and can be misleading if compounding isn’t realistic or fees are ignored).
+      Nova fees are typically paid in <strong>ETH</strong> and vary with network demand and L1 conditions.
+      Your all-in cost depends on: (1) on-chain execution gas, (2) data availability / posting mechanics,
+      and (3) any bridge or app-level fees.
+    </p>
+    <ul>
+      <li><strong>Network demand:</strong> heavy usage can increase base fees.</li>
+      <li><strong>L1 conditions:</strong> bridge and settlement-related costs can move with Ethereum fees.</li>
+      <li><strong>App behavior:</strong> complex contract calls cost more than simple transfers.</li>
+    </ul>
+
+    <div class="note">
+      <strong>Rule:</strong> Treat “headline cheap” as a range, not a promise. Always keep extra ETH for gas + recovery transactions.
+    </div>
+  </section>
+
+  <section class="card" id="how-to">
+    <h2>How to Add Arbitrum Nova to Your Wallet (Repeatable Checklist)</h2>
+    <p>
+      Use official network parameters. The common essentials are:
+      <span class="inline-code">RPC URL</span> and <span class="inline-code">Chain ID</span>.
+      For Nova, the official docs commonly list:
+      <span class="inline-code">RPC: https://nova.arbitrum.io/rpc</span> and
+      <span class="inline-code">Chain ID: 42170</span>.
     </p>
 
-    <table aria-label="APY vs APR comparison">
+    <table aria-label="Network parameters">
       <thead>
         <tr>
-          <th>Term</th>
-          <th>What it implies</th>
-          <th>Common mistake</th>
+          <th>Parameter</th>
+          <th>Value</th>
+          <th>Notes</th>
         </tr>
       </thead>
       <tbody>
         <tr class="highlight">
-          <td>APR</td>
-          <td>Simple annual rate (no compounding)</td>
-          <td>Assuming APR = final outcome (it ignores compounding and fees)</td>
+          <td>Network name</td>
+          <td>Arbitrum Nova</td>
+          <td>Label in your wallet</td>
         </tr>
         <tr>
-          <td>APY</td>
-          <td>Annualized rate with compounding assumption</td>
-          <td>Believing APY without checking compounding frequency + transaction costs</td>
+          <td>RPC URL</td>
+          <td><span class="mono">https://nova.arbitrum.io/rpc</span></td>
+          <td>Prefer official docs; use trusted providers if needed</td>
+        </tr>
+        <tr>
+          <td>Chain ID</td>
+          <td><span class="mono">42170</span></td>
+          <td>Critical to prevent wrong-network sends</td>
+        </tr>
+        <tr>
+          <td>Currency symbol</td>
+          <td>ETH</td>
+          <td>Gas token</td>
+        </tr>
+        <tr>
+          <td>Explorer</td>
+          <td><span class="mono">https://nova.arbiscan.io</span></td>
+          <td>Primary explorer option</td>
         </tr>
       </tbody>
     </table>
 
     <div class="note">
-      <strong>Quick check:</strong> If compounding requires frequent transactions, fees can erase the “APY gap” for small balances.
+      <strong>Safety:</strong> Never copy RPC details from random blogs. Verify via official Arbitrum docs before adding the network.
     </div>
   </section>
 
-  <section class="card" id="how-to">
-    <h2>How to Stake Polygon (POL): Tutorial (Clean, Repeatable Workflow)</h2>
+  <section class="card" id="bridge">
+    <h2>How to Bridge to Arbitrum Nova Safely (Step-by-Step)</h2>
     <ol>
-      <li><strong>Choose your method:</strong> native staking vs liquid staking (based on your liquidity needs).</li>
-      <li><strong>Prepare wallet hygiene:</strong> verify official URLs, consider hardware wallet for size, keep backups safe.</li>
-      <li><strong>Pick a validator:</strong> assess commission, uptime history, transparency, and operational reputation.</li>
-      <li><strong>Delegate a small test:</strong> verify rewards accrual and that you understand the UI and steps.</li>
-      <li><strong>Scale in:</strong> add stake in tranches to reduce operational mistakes.</li>
-      <li><strong>Track + compound:</strong> decide if compounding is worth it after fees.</li>
-      <li><strong>Plan your exit:</strong> know unbonding/claim rules before you need liquidity.</li>
+      <li><strong>Use official entry points:</strong> Arbitrum Portal / Bridge.</li>
+      <li><strong>Confirm you selected “Arbitrum Nova”</strong> as the destination network.</li>
+      <li><strong>Test small:</strong> bridge a small amount of ETH first, verify on explorer, then scale in.</li>
+      <li><strong>Wait for confirmation:</strong> don’t re-send until you’ve checked status in the explorer.</li>
+      <li><strong>Keep gas buffer:</strong> leave extra ETH on Nova for app usage and emergency actions.</li>
     </ol>
 
     <div class="note">
-      <strong>Best way to stake Polygon:</strong> stable operational setup beats chasing the highest headline number.
-      Reliability + sane commission + safe process wins.
+      <strong>Most common failure mode:</strong> user bridged successfully but wallet still shows the wrong network,
+      so they think funds are “missing”. Switch wallet network to Arbitrum Nova and verify in an explorer.
     </div>
   </section>
 
   <section class="card" id="calculator">
-    <h2>Polygon Staking Calculator: A Practical Estimation Framework</h2>
+    <h2>Nova Fee & Bridge Cost Calculator: Practical Estimation Framework</h2>
     <p>
-      A <strong>Polygon staking calculator</strong> should estimate your <em>net</em> outcome (not just a marketing APY).
-      Use this framework:
+      A useful “calculator” should estimate the <em>total</em> cost, not just “gas”.
+      Use this framework to approximate net costs for a planned workflow (bridge → app → exit).
     </p>
 
-    <table aria-label="Staking calculator inputs">
+    <table aria-label="Cost estimation inputs">
       <thead>
         <tr>
           <th>Input</th>
@@ -576,336 +624,436 @@
       </thead>
       <tbody>
         <tr class="highlight">
-          <td>Stake amount (POL)</td>
-          <td>Your principal</td>
-          <td>Determines if compounding fees are worth it</td>
+          <td>Planned actions</td>
+          <td>Bridge, swaps, mints, transfers, exits</td>
+          <td>Complex actions have higher gas</td>
         </tr>
         <tr>
-          <td>Gross APR</td>
-          <td>Network/validator rate before compounding</td>
-          <td>Baseline yield driver</td>
+          <td>Gas per action</td>
+          <td>Estimated gas used by contracts</td>
+          <td>Primary driver of cost</td>
         </tr>
         <tr>
-          <td>Validator commission</td>
-          <td>Operator cut</td>
-          <td>Directly reduces rewards</td>
+          <td>Base fee conditions</td>
+          <td>Network demand at time of use</td>
+          <td>Cost can move quickly in spikes</td>
         </tr>
         <tr>
-          <td>Compounding frequency</td>
-          <td>Monthly/weekly/daily (if applicable)</td>
-          <td>Increases APY but may increase fees</td>
+          <td>Bridge fees / delays</td>
+          <td>Bridge route characteristics</td>
+          <td>Changes time-to-finality and cost</td>
         </tr>
         <tr>
-          <td>Tx costs</td>
-          <td>Claim/compound/unstake fees</td>
-          <td>Can dominate small portfolios</td>
+          <td>Buffer</td>
+          <td>Extra ETH for recovery steps</td>
+          <td>Prevents “stuck” situations</td>
         </tr>
       </tbody>
     </table>
 
     <div class="note">
-      <strong>Calculator takeaway:</strong> For smaller balances, “set and forget” (no frequent compounding) often yields higher net results after fees.
+      <strong>Rule of thumb:</strong> Keep a “gas reserve” that covers at least 3–5 extra transactions beyond your plan
+      (approval + revoke + retry + exit).
     </div>
   </section>
 
-  <section class="card" id="validators">
-    <h2>Polygon Validator List: How to Choose the Right Validator</h2>
+  <section class="card" id="rpc">
+    <h2>RPC Endpoints & Reliability Checklist</h2>
     <p>
-      Instead of chasing “top APR”, evaluate validators like infrastructure providers.
-      A strong <strong>Polygon validator list</strong> checklist:
+      If a wallet or dApp is slow or inconsistent, the RPC provider may be rate-limiting or having issues.
+      Prefer official public endpoints or reputable infrastructure providers.
     </p>
     <ul>
-      <li><strong>Commission:</strong> reasonable and stable (avoid sudden spikes).</li>
-      <li><strong>Uptime &amp; reliability:</strong> consistent performance matters more than hype.</li>
-      <li><strong>Transparency:</strong> clear operator identity, documentation, and communication.</li>
-      <li><strong>Risk posture:</strong> sensible security practices and operational maturity.</li>
+      <li><strong>Official public RPC:</strong> <span class="inline-code">https://nova.arbitrum.io/rpc</span></li>
+      <li><strong>Know the difference:</strong> “RPC” vs “sequencer endpoints” (some endpoints only support sending tx).</li>
+      <li><strong>Reliability tip:</strong> If you build apps, use a managed provider + fallbacks; if you’re a user, try switching RPC in your wallet.</li>
     </ul>
 
     <div class="note">
-      <strong>Heuristic:</strong> Pick validators you can explain in one sentence (who they are + why you trust their operations).
+      <strong>Debug move:</strong> If a dApp UI is broken, verify your tx hash on an explorer first. Explorers show truth; UIs can lag.
+    </div>
+  </section>
+
+  <section class="card" id="explorers">
+    <h2>Explorers: How to Verify Transactions on Nova</h2>
+    <p>
+      Explorers are your first-line truth source when balances “disappear”, swaps fail, or bridges feel stuck.
+      Two common explorer options:
+    </p>
+    <div class="grid-2">
+      <div class="mini">
+        <h3>Nova Arbiscan</h3>
+        <p class="muted">
+          Check tx status, token transfers, contract calls, and internal txs.
+          <br>
+          <a href="https://nova.arbiscan.io/" target="_blank" rel="noopener nofollow">Open Nova Arbiscan</a>
+        </p>
+      </div>
+      <div class="mini">
+        <h3>Blockscout (Nova)</h3>
+        <p class="muted">
+          Alternative explorer UI, contract verification tools, analytics.
+          <br>
+          <a href="https://arbitrum-nova.blockscout.com/" target="_blank" rel="noopener nofollow">Open Blockscout Nova</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="note" style="margin-top:1rem;">
+      <strong>Verification flow:</strong> Address → token balance → latest tx → event logs → confirm destination chain + token contract.
     </div>
   </section>
 
   <section class="card" id="minimum">
-    <h2>Polygon Staking Minimum POL Required</h2>
+    <h2>Minimum ETH Needed on Nova (Practical Gas Buffer)</h2>
     <p>
-      The <strong>Polygon staking minimum POL required</strong> depends on the staking method and platform.
-      In practice, your “real minimum” is the amount where fees don’t crush net yield and you can still afford
-      exit transactions if needed.
+      There’s no “staking minimum” on Nova, but there is a <strong>practical minimum gas reserve</strong>.
+      If you run out of ETH on Nova, you can’t approve, swap, revoke, or exit.
     </p>
     <ul>
-      <li><strong>Hard minimum:</strong> varies by method/platform.</li>
-      <li><strong>Practical minimum:</strong> enough POL so periodic transactions (claim/compound/unstake) don’t eat yield.</li>
-      <li><strong>Safety minimum:</strong> keep extra for network fees and recovery actions.</li>
+      <li><strong>Hard minimum:</strong> enough ETH for at least one transaction.</li>
+      <li><strong>Practical minimum:</strong> enough ETH for multiple actions (approve + execute + retry + revoke + exit).</li>
+      <li><strong>Safety minimum:</strong> extra ETH so you can recover from mistakes without bridging again.</li>
     </ul>
 
     <div class="note">
-      <strong>Rule:</strong> Always keep a gas buffer; being “all-in” is how people get stuck.
-    </div>
-  </section>
-
-  <section class="card" id="yield">
-    <h2>Polygon Staking Yield: How to Think About Net Returns</h2>
-    <p>
-      <strong>Polygon staking yield</strong> should be evaluated as <em>net</em> performance: rewards minus commissions minus fees,
-      adjusted for time locked/unbonded and any downtime.
-    </p>
-
-    <h3>Net yield checklist</h3>
-    <ul>
-      <li>Gross rewards earned</li>
-      <li>Minus validator commission</li>
-      <li>Minus transaction costs (claim/compound/unstake)</li>
-      <li>Minus “lost time” (unbonding delays / operational downtime)</li>
-    </ul>
-
-    <div class="note">
-      <strong>Best practice:</strong> Track realized outcomes quarterly. If net yield is not beating your alternative (or risk feels wrong), rotate strategy.
-    </div>
-  </section>
-
-  <section class="card" id="review">
-    <h2>Staking Polygon Review: Legit, Trust, and What to Watch (2025–2026)</h2>
-    <p>
-      A <strong>Staking Polygon review</strong> should focus on predictable outcomes and safety:
-      whether the process is understandable, the validator ecosystem is mature, and the “gotchas” are manageable.
-    </p>
-
-    <div class="callout-grid">
-      <div class="mini">
-        <h3>Staking Polygon legit?</h3>
-        <p class="muted">
-          Generally, staking as a mechanism is legitimate. Your real question is: <em>which method/provider</em> and
-          <em>which validator</em> are you trusting operationally.
-        </p>
-      </div>
-      <div class="mini">
-        <h3>Staking Polygon trust</h3>
-        <p class="muted">
-          Trust is earned via transparency: clear docs, known operators, consistent performance, and a clean exit path.
-        </p>
-      </div>
-    </div>
-
-    <div class="note">
-      <strong>2025 / 2026 lens:</strong> The market rewards operational discipline. Assume attackers target approvals, fake sites, and users rushing steps.
-    </div>
-  </section>
-
-  <section class="card" id="safety">
-    <h2>Staking Polygon Safe? Risks and Rewards (What Actually Matters)</h2>
-    <p>
-      “Safe” is not binary. <strong>Staking Polygon safe</strong> depends on method risk + validator/operator risk + user mistakes.
-      You can reduce risk dramatically with hygiene and conservative choices.
-    </p>
-
-    <h3>Key risks</h3>
-    <ul>
-      <li><strong>Smart-contract risk:</strong> higher with extra layers (some liquid staking designs).</li>
-      <li><strong>Validator/operator risk:</strong> downtime, poor ops, slashing exposure.</li>
-      <li><strong>Phishing/approval risk:</strong> fake UIs and bad approvals are top avoidable loss sources.</li>
-      <li><strong>Liquidity risk:</strong> you may not be able to exit instantly (unbonding / market liquidity).</li>
-    </ul>
-
-    <div class="note">
-      <strong>Hard rule:</strong> Use bookmarks for official sites, prefer minimal approvals, and keep a separate wallet for “daily” dApp usage if you’re staking meaningful size.
+      <strong>Rule:</strong> Never bridge “all your ETH” into a single transaction. Leave buffer on each chain you operate on.
     </div>
   </section>
 
   <section class="card" id="comparison">
-    <h2>Staking Polygon Comparison: Native Staking vs Liquid Staking</h2>
+    <h2>Comparison: Arbitrum Nova vs Arbitrum One</h2>
     <p>
-      <strong>Staking Polygon vs liquid staking</strong> is a trade-off between simplicity and flexibility.
-      Choose based on your need for liquidity and your tolerance for extra smart-contract/market risks.
+      Nova and Arbitrum One are both Arbitrum ecosystems, but they optimize for different trade-offs.
+      The simplest mental model:
     </p>
 
-    <table aria-label="Native vs Liquid staking">
+    <table aria-label="Nova vs One comparison">
       <thead>
         <tr>
           <th>Dimension</th>
-          <th>Native delegation</th>
-          <th>Liquid staking</th>
+          <th>Arbitrum Nova</th>
+          <th>Arbitrum One</th>
         </tr>
       </thead>
       <tbody>
         <tr class="highlight">
-          <td>Liquidity</td>
-          <td>Lower (unbonding delays)</td>
-          <td>Higher (tokenized position, depends on market)</td>
+          <td>Primary goal</td>
+          <td>Very low fees for high-volume usage</td>
+          <td>Broader DeFi ecosystem + strong DA assumptions</td>
         </tr>
         <tr>
-          <td>Complexity</td>
-          <td>Lower</td>
-          <td>Higher (contracts + peg/liquidity)</td>
+          <td>Data availability</td>
+          <td>AnyTrust (DAC-based DA)</td>
+          <td>Rollup-style posting to L1 (stronger DA model)</td>
         </tr>
         <tr>
-          <td>Risk surface</td>
-          <td>Validator/operator + protocol rules</td>
-          <td>Native risks + smart-contract + market liquidity risks</td>
+          <td>Typical use</td>
+          <td>Social, gaming, consumer apps</td>
+          <td>DeFi, larger TVL, complex protocols</td>
         </tr>
       </tbody>
     </table>
 
     <div class="note">
-      <strong>Decision rule:</strong> If you need quick exits, liquid staking can help—but treat it like an additional layer of risk.
+      <strong>Decision rule:</strong> If you prioritize lowest fees and UX for consumer activity, Nova is often a fit.
+      If you prioritize the strongest “full rollup DA” assumption for higher-value DeFi, Arbitrum One may be preferable.
     </div>
   </section>
 
   <section class="card" id="best-practices">
-    <h2>Best Way to Stake Polygon: Best Practices (Simple, High-Impact)</h2>
+    <h2>Best Practices: Security, Approvals, and Operational Hygiene</h2>
     <ul>
-      <li><strong>Use a hardware wallet</strong> for meaningful amounts.</li>
-      <li><strong>Delegate in tranches</strong> (test small, then scale).</li>
-      <li><strong>Prefer reputable validators</strong> with stable commission and strong ops.</li>
-      <li><strong>Keep a gas buffer</strong> for claim/unstake/recovery actions.</li>
-      <li><strong>Review allowances periodically</strong> and revoke stale permissions.</li>
-      <li><strong>Track net yield</strong> (not just headline APY).</li>
+      <li><strong>Bookmark official sites</strong> (Portal/Bridge/Docs). Avoid ads and fake clones.</li>
+      <li><strong>Separate wallets</strong>: one “vault” (cold/hardware), one “daily” for dApps.</li>
+      <li><strong>Approve intentionally</strong>: minimal allowances, revoke stale approvals periodically.</li>
+      <li><strong>Verify token contracts</strong> on explorers (avoid fake tokens with same symbols).</li>
+      <li><strong>Keep gas buffer</strong> on Nova and on the origin chain for exits/retries.</li>
+      <li><strong>Test small first</strong> for any new bridge, dApp, or contract interaction.</li>
     </ul>
 
     <div class="note">
-      <strong>Most common mistake:</strong> users optimize for +0.5% yield and ignore the 10× bigger risk: bad ops + bad security habits.
+      <strong>Most common mistake:</strong> optimizing for tiny fee savings while ignoring the real risk:
+      phishing, malicious approvals, and wrong-network confusion.
     </div>
   </section>
 
   <section class="card" id="troubleshooting">
-    <h2>Staking Polygon Troubleshooting: Common Issues, Root Causes, Fixes</h2>
+    <h2>Troubleshooting: Common Issues, Root Causes, Fixes</h2>
 
-    <h3>“Rewards not showing”</h3>
+    <h3>“My funds are missing after bridging”</h3>
     <ul>
-      <li>You’re viewing the wrong network/account in the wallet.</li>
-      <li>Rewards accrue but require a claim/refresh action in the UI.</li>
-      <li>Validator has downtime or reporting lag—check on-chain data if available.</li>
+      <li>Switch wallet network to <strong>Arbitrum Nova</strong> and refresh.</li>
+      <li>Check your address on an explorer (Nova Arbiscan / Blockscout).</li>
+      <li>Confirm you bridged to the correct destination chain (Nova vs One).</li>
     </ul>
 
-    <h3>“Can’t unstake / withdraw”</h3>
+    <h3>“Transaction is pending forever”</h3>
     <ul>
-      <li>Unbonding period is active (wait until it completes).</li>
-      <li>There is a claim/finalize step you haven’t executed.</li>
-      <li>You don’t have enough gas for the exit transaction.</li>
+      <li>RPC/provider may be unstable—try another RPC endpoint or re-open wallet.</li>
+      <li>Check if the tx is actually mined on explorer (UI can lag).</li>
+      <li>If stuck in mempool: speed up / replace transaction (advanced users), or wait for wallet instructions.</li>
     </ul>
 
-    <h3>“APY seems lower than expected”</h3>
+    <h3>“dApp says I have 0 balance but explorer shows funds”</h3>
     <ul>
-      <li>Commission is higher than assumed.</li>
-      <li>Compounding is not happening (or fees make it not worth it).</li>
-      <li>Validator performance/uptime reduced realized rewards.</li>
+      <li>dApp may be connected to the wrong network or wrong wallet account.</li>
+      <li>Clear site cache / reconnect wallet / reset wallet connection.</li>
+      <li>Try another RPC provider (some dApps rely on your wallet’s RPC).</li>
+    </ul>
+
+    <h3>“Swap failed”</h3>
+    <ul>
+      <li>Insufficient gas or slippage too tight.</li>
+      <li>Token approval missing or allowance too low.</li>
+      <li>Liquidity moved—try smaller size or different route.</li>
     </ul>
 
     <div class="note">
-      <strong>Best debugging method:</strong> verify state from the chain / official dashboards first, then UI second.
-      UI can lag; on-chain data is the source of truth.
+      <strong>Best debugging method:</strong> explorer-first. Verify tx state and event logs on-chain; treat UI as secondary.
     </div>
   </section>
 
   <section class="eeat" id="eeat" aria-labelledby="eeat-title">
-    <h2 id="eeat-title">Staking Polygon: Authoritative Notes &amp; External References</h2>
+    <h2 id="eeat-title">Authoritative Sources & External References (EEAT)</h2>
     <p>
-      Replace placeholder links with your chosen authoritative sources. Keep this block “clean” (official docs, reputable security resources,
-      and dashboards) to strengthen EEAT.
+      Keep this block “clean” (official docs, reputable research, explorers). These are strong defaults for Arbitrum Nova:
     </p>
 
-    <h3>Polygon / Staking</h3>
+    <h3>Official Arbitrum (Portal / Bridge / Docs)</h3>
     <ul>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon — Official Site</a></li>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon Staking — Official Docs</a></li>
-      <li><a href="#" target="_blank" rel="noopener nofollow">Polygon Validators — Explorer / Dashboard</a></li>
+      <li><a href="https://portal.arbitrum.io/" target="_blank" rel="noopener nofollow">Arbitrum Portal</a></li>
+      <li><a href="https://portal.arbitrum.io/bridge" target="_blank" rel="noopener nofollow">Arbitrum Bridge (Portal)</a></li>
+      <li><a href="https://docs.arbitrum.io/arbitrum-bridge/quickstart" target="_blank" rel="noopener nofollow">Arbitrum Bridge Quickstart (network parameters)</a></li>
+      <li><a href="https://docs.arbitrum.io/build-decentralized-apps/reference/node-providers" target="_blank" rel="noopener nofollow">RPC endpoints & providers (official docs)</a></li>
+      <li><a href="https://docs.arbitrum.io/run-arbitrum-node/data-availability-committees/configure-dac" target="_blank" rel="noopener nofollow">Data Availability Committee (AnyTrust / DAC docs)</a></li>
     </ul>
 
-    <h3>Security hygiene</h3>
+    <h3>Explorers</h3>
+    <ul>
+      <li><a href="https://nova.arbiscan.io/" target="_blank" rel="noopener nofollow">Nova Arbiscan</a></li>
+      <li><a href="https://arbitrum-nova.blockscout.com/" target="_blank" rel="noopener nofollow">Blockscout — Arbitrum Nova</a></li>
+    </ul>
+
+    <h3>Independent risk / architecture references</h3>
+    <ul>
+      <li><a href="https://l2beat.com/scaling/projects/nova" target="_blank" rel="noopener nofollow">L2BEAT — Arbitrum Nova</a></li>
+      <li><a href="https://docs.arbitrum.foundation/dao-glossary" target="_blank" rel="noopener nofollow">Arbitrum Foundation glossary (DAC definition)</a></li>
+    </ul>
+
+    <h3>General security hygiene</h3>
     <ul>
       <li><a href="https://ethereum.org/guides/how-to-revoke-token-access/" target="_blank" rel="noopener nofollow">Ethereum.org — Revoke Token Approvals</a></li>
       <li><a href="https://revoke.cash/" target="_blank" rel="noopener nofollow">Revoke.cash — Allowance Management</a></li>
       <li><a href="https://blog.openzeppelin.com/" target="_blank" rel="noopener nofollow">OpenZeppelin — Smart Contract Security</a></li>
-      <li><a href="https://consensys.io/blog" target="_blank" rel="noopener nofollow">Consensys — Security Research</a></li>
     </ul>
 
     <div class="note">
-      <strong>About:</strong> Prepared by Crypto Finance Experts as a practical SEO-oriented knowledge base for <em>Staking Polygon (POL)</em>:
-      rewards, APY/APR, validators, calculator framework, safety, comparisons, and troubleshooting.
+      <strong>About:</strong> Prepared by Crypto Finance Experts as a practical SEO-oriented knowledge base for <em>Arbitrum Nova</em>:
+      AnyTrust model, bridging, wallet setup, fees, RPC, explorers, safety, comparisons, and troubleshooting.
     </div>
   </section>
 
   <section class="card faq-section" aria-labelledby="faq">
-    <h2 id="faq">Staking Polygon (POL): Frequently Asked Questions</h2>
+    <h2 id="faq">Arbitrum Nova: Deep FAQ (2026)</h2>
 
+    <!-- FAQ 1 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f1" id="b1">
-        <h3>What is Staking Polygon (POL) and how does it work?</h3><span class="faq-plus">+</span>
+        <h3>What is Arbitrum Nova?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f1" class="faq-content" role="region" aria-labelledby="b1">
-        <p><strong>Staking Polygon (POL)</strong> typically involves delegating POL to validators (or using a staking method that represents your stake) to earn rewards while supporting network operations.</p>
+        <p><strong>Arbitrum Nova</strong> is an Arbitrum Layer 2 optimized for low fees and high throughput. It uses an <strong>AnyTrust</strong> data availability model (DAC-based) to reduce costs while settling execution to Ethereum.</p>
       </div>
     </div>
 
+    <!-- FAQ 2 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f2" id="b2">
-        <h3>Polygon staking rewards: what affects my yield?</h3><span class="faq-plus">+</span>
+        <h3>Is Arbitrum Nova the same as Arbitrum One?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f2" class="faq-content" role="region" aria-labelledby="b2">
-        <p>Your net yield depends on gross rate, validator commission, validator performance/uptime, compounding behavior, and transaction costs for claim/compound/unstake actions.</p>
+        <p>No. Both are Arbitrum chains, but <strong>Nova</strong> is optimized for ultra-low fees using AnyTrust DA assumptions, while <strong>Arbitrum One</strong> is the flagship rollup chain commonly used for DeFi and higher-value activity.</p>
       </div>
     </div>
 
+    <!-- FAQ 3 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f3" id="b3">
-        <h3>Polygon staking APY / APR: which should I trust?</h3><span class="faq-plus">+</span>
+        <h3>What token do I need for gas on Nova?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f3" class="faq-content" role="region" aria-labelledby="b3">
-        <p>APR is a simple rate; APY assumes compounding. Trust the number that matches your actual compounding cadence and includes fees/commission in the net estimate.</p>
+        <p>Nova uses <strong>ETH</strong> as the gas token. Keep a gas buffer on Nova so you can approve, swap, revoke, and exit without re-bridging.</p>
       </div>
     </div>
 
+    <!-- FAQ 4 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f4" id="b4">
-        <h3>How to stake Polygon (POL) safely?</h3><span class="faq-plus">+</span>
+        <h3>What is AnyTrust and what is a DAC?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f4" class="faq-content" role="region" aria-labelledby="b4">
-        <p>Use official links (bookmarks), consider a hardware wallet for size, delegate a small test first, choose reputable validators, and keep a gas buffer for exits and recovery actions.</p>
+        <p><strong>AnyTrust</strong> is a data availability approach where a <strong>Data Availability Committee (DAC)</strong> stores and serves transaction data on demand. This can reduce fees, but it introduces a DA trust assumption relative to always publishing full data on L1.</p>
       </div>
     </div>
 
+    <!-- FAQ 5 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f5" id="b5">
-        <h3>Staking Polygon safe, legit, and trustworthy in 2026?</h3><span class="faq-plus">+</span>
+        <h3>Is Arbitrum Nova “safe” for large amounts?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f5" class="faq-content" role="region" aria-labelledby="b5">
-        <p>Staking as a mechanism can be legitimate, but outcomes depend on method/provider risk, validator quality, and user security hygiene. Treat phishing and approvals as the top avoidable risks.</p>
+        <p>“Safe” depends on your risk tolerance. Nova is designed for low fees and consumer activity, but its DA model differs from rollup DA. For large amounts, many users prefer conservative operational habits: split funds, use official bridge links, verify contracts, and consider whether Arbitrum One is a better fit for your risk profile.</p>
       </div>
     </div>
 
+    <!-- FAQ 6 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f6" id="b6">
-        <h3>Polygon validator list: what matters most?</h3><span class="faq-plus">+</span>
+        <h3>How do I add Arbitrum Nova to MetaMask?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f6" class="faq-content" role="region" aria-labelledby="b6">
-        <p>Look for stable commission, strong uptime/performance, transparency, and operational reputation. Avoid unknown operators offering eye-catching headline rates.</p>
+        <p>Add a custom network using official parameters. Commonly: <strong>RPC</strong> <span class="inline-code">https://nova.arbitrum.io/rpc</span>, <strong>Chain ID</strong> <span class="inline-code">42170</span>, <strong>Currency</strong> ETH, and explorer <span class="inline-code">https://nova.arbiscan.io</span>.</p>
       </div>
     </div>
 
+    <!-- FAQ 7 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f7" id="b7">
-        <h3>Staking Polygon vs liquid staking: which is better?</h3><span class="faq-plus">+</span>
+        <h3>What’s the official bridge to Arbitrum Nova?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f7" class="faq-content" role="region" aria-labelledby="b7">
-        <p>Native staking is simpler but less liquid; liquid staking may be more flexible but adds smart-contract and market liquidity/peg risks. Choose based on your need for fast exits.</p>
+        <p>The official entry point is the <strong>Arbitrum Portal</strong> bridge. Always access it from bookmarks / the official portal to reduce phishing risk.</p>
       </div>
     </div>
 
+    <!-- FAQ 8 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f8" id="b8">
-        <h3>Polygon staking calculator: what inputs do I need?</h3><span class="faq-plus">+</span>
+        <h3>How long does bridging take?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f8" class="faq-content" role="region" aria-labelledby="b8">
-        <p>Stake amount, gross APR, validator commission, compounding frequency, and transaction costs. The goal is a net yield estimate, not a marketing APY.</p>
+        <p>Timing depends on direction (L1 → L2 vs L2 → L1), bridge route, and confirmations. Always track your transfer using the bridge UI and confirm status on an explorer using your address and tx hash.</p>
       </div>
     </div>
 
+    <!-- FAQ 9 -->
     <div class="faq-item">
       <button class="faq-button" aria-expanded="false" aria-controls="f9" id="b9">
-        <h3>Why can’t I unstake or withdraw right now?</h3><span class="faq-plus">+</span>
+        <h3>My funds don’t show in my wallet—what should I do first?</h3><span class="faq-plus">+</span>
       </button>
       <div id="f9" class="faq-content" role="region" aria-labelledby="b9">
-        <p>Most commonly: an unbonding period is still running, a claim/finalize step is required, or you lack gas for the exit transaction.</p>
+        <p>First, check your address on a Nova explorer (Nova Arbiscan / Blockscout). If the funds are there, your wallet is likely on the wrong network/account or using an RPC that’s not refreshing.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 10 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f10" id="b10">
+        <h3>Which explorer should I trust?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f10" class="faq-content" role="region" aria-labelledby="b10">
+        <p>Use well-known explorers like <strong>Nova Arbiscan</strong> and <strong>Blockscout</strong>. If one has UI issues, cross-check on the other.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 11 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f11" id="b11">
+        <h3>What RPC should I use for Nova?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f11" class="faq-content" role="region" aria-labelledby="b11">
+        <p>Start with the official public RPC <span class="inline-code">https://nova.arbitrum.io/rpc</span>. If you experience rate limits, consider a reputable provider (Alchemy/QuickNode/etc.) or set a fallback RPC.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 12 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f12" id="b12">
+        <h3>Why is my transaction pending?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f12" class="faq-content" role="region" aria-labelledby="b12">
+        <p>Usually: RPC issues, wallet UI lag, or the transaction hasn’t propagated. Check the tx hash on the explorer. If it’s not found, your wallet may not have broadcast it successfully—try switching RPC and resending only after confirming it’s not already mined.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 13 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f13" id="b13">
+        <h3>Why did my swap fail?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f13" class="faq-content" role="region" aria-labelledby="b13">
+        <p>Common causes: insufficient gas, slippage too low, missing token approval, or liquidity moved. Try increasing slippage slightly, confirm approval, and verify the revert reason in the explorer (if available).</p>
+      </div>
+    </div>
+
+    <!-- FAQ 14 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f14" id="b14">
+        <h3>How do I avoid phishing on Nova?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f14" class="faq-content" role="region" aria-labelledby="b14">
+        <p>Use bookmarks for official Arbitrum sites, verify URLs carefully, avoid “sponsored” search results, and never sign transactions you don’t understand. Keep a separate “daily wallet” with limited funds.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 15 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f15" id="b15">
+        <h3>What are token approvals and why do they matter?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f15" class="faq-content" role="region" aria-labelledby="b15">
+        <p>Approvals let a contract spend your token. Unlimited approvals can be risky if the dApp/contract is malicious or later compromised. Prefer minimal allowances and revoke old approvals regularly.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 16 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f16" id="b16">
+        <h3>How do I revoke approvals on Nova?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f16" class="faq-content" role="region" aria-labelledby="b16">
+        <p>Use a reputable allowance tool (e.g., Revoke.cash) and ensure you’re connected to the correct chain (Arbitrum Nova). Revoke stale approvals you no longer need.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 17 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f17" id="b17">
+        <h3>Does Nova have “staking” like Polygon?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f17" class="faq-content" role="region" aria-labelledby="b17">
+        <p>Nova is an L2 chain; it doesn’t work like a delegated staking network with validators in the same way as some L1s. You may find yield opportunities in DeFi apps on Nova, but those are protocol-specific and carry smart-contract and market risks.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 18 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f18" id="b18">
+        <h3>What’s the chain ID for Arbitrum Nova?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f18" class="faq-content" role="region" aria-labelledby="b18">
+        <p>The commonly used chain ID for Arbitrum Nova is <strong>42170</strong>. Always verify network settings using official docs.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 19 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f19" id="b19">
+        <h3>Can I use the same address on Nova and Ethereum?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f19" class="faq-content" role="region" aria-labelledby="b19">
+        <p>Yes—EVM chains typically use the same address format. But balances are chain-specific. Always confirm which chain you’re on before sending or signing.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 20 -->
+    <div class="faq-item">
+      <button class="faq-button" aria-expanded="false" aria-controls="f20" id="b20">
+        <h3>What should I do if a bridge transfer is stuck?</h3><span class="faq-plus">+</span>
+      </button>
+      <div id="f20" class="faq-content" role="region" aria-labelledby="b20">
+        <p>Check: (1) bridge UI status, (2) tx hash on origin chain explorer, (3) your address on destination explorer. Most “stuck” cases are user-side (wrong network, UI lag, or insufficient confirmations), not lost funds.</p>
       </div>
     </div>
 
@@ -914,21 +1062,54 @@
 </main>
 
 <footer class="container" role="contentinfo" style="padding:2rem 0; border-top:1px solid var(--line); margin-top:2rem">
-  <p class="muted">© 2026 Staking Polygon (POL) Guide. Educational content with safety-first operational focus.</p>
+  <p class="muted">© 2026 Arbitrum Nova Guide. Educational content with a security-first operational focus.</p>
 </footer>
 
+<script>
+  // Accessible FAQ accordion
+  (function(){
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item) => {
+      const btn = item.querySelector('.faq-button');
+      const panel = item.querySelector('.faq-content');
+      const plus = item.querySelector('.faq-plus');
 
+      if(!btn || !panel) return;
 
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
+        // close all
+        items.forEach((it) => {
+          const b = it.querySelector('.faq-button');
+          const p = it.querySelector('.faq-content');
+          const s = it.querySelector('.faq-plus');
+          if(!b || !p) return;
+          b.setAttribute('aria-expanded', 'false');
+          p.style.maxHeight = '0px';
+          p.classList.remove('open');
+          if(s) s.textContent = '+';
+        });
 
+        // open clicked if it was closed
+        if(!isOpen){
+          btn.setAttribute('aria-expanded', 'true');
+          panel.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          if(plus) plus.textContent = '–';
+        }
+      });
 
+      // Ensure correct maxHeight on resize for open panels
+      window.addEventListener('resize', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if(expanded){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
 
-
-
-
-
-
-
-
-
-</body></html>
+</body>
+</html>
