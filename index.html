@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arbitrum Nova: Complete Guide to Fees, Apps &amp; Setup</title>
+<meta name="description" content="Arbitrum Nova is a low-cost Ethereum Layer 2 built for high-volume apps and gaming. Learn how it works, compare fees, explore top dApps, and get started today.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://arbitrum-nova.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Arbitrum Nova: Complete Guide to Fees, Apps &amp; Setup">
+<meta property="og:description" content="Arbitrum Nova is a low-cost Ethereum Layer 2 built for high-volume apps and gaming. Learn how it works, compare fees, explore top dApps, and get started today.">
+<meta property="og:url" content="https://arbitrum-nova.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Arbitrum Nova: Complete Guide to Fees, Apps &amp; Setup">
+<meta name="twitter:description" content="Arbitrum Nova is a low-cost Ethereum Layer 2 built for high-volume apps and gaming. Learn how it works, compare fees, explore top dApps, and get started today.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Arbitrum Nova: Complete Guide to Fees, Apps & Setup", "description": "Arbitrum Nova is a low-cost Ethereum Layer 2 built for high-volume apps and gaming. Learn how it works, compare fees, explore top dApps, and get started today.", "inLanguage": "en", "dateModified": "2026-02-23", "url": "https://arbitrum-nova.github.io/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://arbitrum-nova.github.io"}, {"@type": "ListItem", "position": 2, "name": "Arbitrum Nova: Complete Guide to Fees, Apps & Setup", "item": "https://arbitrum-nova.github.io/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Arbitrum Nova used for?", "acceptedAnswer": {"@type": "Answer", "text": "Arbitrum Nova is used for gaming, social tokens, and high-frequency dApps that require low transaction fees. Projects choose it to minimize gas costs while retaining Ethereum-backed dispute resolution."}}, {"@type": "Question", "name": "How is Arbitrum Nova different from Arbitrum One?", "acceptedAnswer": {"@type": "Answer", "text": "Arbitrum Nova uses an AnyTrust model with a Data Availability Committee, while Arbitrum One posts full transaction data to Ethereum as an optimistic rollup. Nova lowers fees, whereas One maximizes data availability decentralization."}}, {"@type": "Question", "name": "Are fees on Arbitrum Nova really cheaper?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, fees on Arbitrum Nova are typically much lower than Ethereum mainnet because less data is posted on-chain. Actual costs vary with network conditions, but simple transfers often cost cents instead of dollars."}}, {"@type": "Question", "name": "Is Arbitrum Nova secure?", "acceptedAnswer": {"@type": "Answer", "text": "Arbitrum Nova inherits Ethereum’s fraud-proof system but assumes at least one honest Data Availability Committee member. That model is considered secure for many applications, though it differs slightly from full rollups."}}, {"@type": "Question", "name": "How do I add Arbitrum Nova to MetaMask?", "acceptedAnswer": {"@type": "Answer", "text": "To add Arbitrum Nova, enter the official RPC URL, chain ID, and network name into MetaMask’s custom network settings. After saving, you can send and receive ETH on the Nova chain."}}, {"@type": "Question", "name": "Can I bridge ETH to Arbitrum Nova?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, users can bridge ETH to Arbitrum Nova using the official Arbitrum bridge or trusted third-party bridges. Always verify URLs and allow sufficient time for confirmations."}}, {"@type": "Question", "name": "Does Arbitrum Nova support ERC-20 tokens?", "acceptedAnswer": {"@type": "Answer", "text": "Arbitrum Nova supports ERC-20 tokens bridged from Ethereum. Token compatibility depends on bridge support and correct contract addresses."}}, {"@type": "Question", "name": "Who created Arbitrum Nova?", "acceptedAnswer": {"@type": "Answer", "text": "Arbitrum Nova was developed by Offchain Labs, the team behind the broader Arbitrum network, to address high-volume use cases with lower transaction costs."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===========================================
+   BASE GRAY — Cool Neutral Premium
+   Template ID: base-gray
+   =========================================== */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #f4f5f7;
+  --bg-secondary: #ebedf0;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfcfd;
+  --bg-subtle: #e8eaed;
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-light: rgba(13,148,136,0.07);
+  --accent-border: rgba(13,148,136,0.2);
+  --gradient-cta: linear-gradient(135deg, #0d9488, #0f766e);
+  --gradient-cta-glow: rgba(13,148,136,0.2);
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border: #d1d5db;
+  --border-hover: #b0b5bd;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.07);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+body {
+  font-family: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ═══════ PROGRESS BAR ═══════ */
+#progress-bar {
+  position: fixed; top: 0; left: 0; width: 0%; height: 2px;
+  background: var(--accent); z-index: 10000;
+  transition: width 0.1s linear;
+}
+
+/* ═══════ CONTAINERS ═══════ */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.content-container { max-width: 760px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ═══════ PILL NAVIGATION ═══════ */
+.pill-nav {
+  position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 9000;
+  background: rgba(244,245,247,0.88);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 50px; padding: 5px 6px;
+  display: flex; align-items: center; gap: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s, transform 0.35s;
+  transform: translateX(-50%) translateY(-8px);
+  max-width: 94vw; overflow-x: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.pill-nav::-webkit-scrollbar { display: none; }
+.pill-nav.visible { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+
+.pill-nav a {
+  font-family: 'Manrope', sans-serif; font-size: 0.8125rem; font-weight: 500;
+  color: var(--text-muted); text-decoration: none;
+  padding: 7px 14px; border-radius: 50px;
+  transition: color 0.2s, background 0.2s; white-space: nowrap;
+}
+.pill-nav a:hover { color: var(--text-primary); background: var(--bg-subtle); }
+.pill-nav a.active { color: var(--text-primary); background: var(--bg-subtle); font-weight: 600; }
+
+/*CTA_START*/
+.pill-nav .pill-cta {
+  font-family: 'Manrope', sans-serif; font-size: 0.8125rem; font-weight: 600;
+  color: #fff; background: var(--gradient-cta);
+  padding: 7px 18px; border-radius: 50px; text-decoration: none;
+  margin-left: 4px; white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px var(--gradient-cta-glow);
+}
+.pill-nav .pill-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px var(--gradient-cta-glow); }
+/*CTA_END*/
+
+/* ═══════ HERO ═══════ */
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; z-index: 1; padding: 80px 24px;
+  background: var(--bg-secondary);
+}
+.hero::before {
+  content: ''; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(13,148,136,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 780px; position: relative; }
+
+.hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  font-weight: 800; line-height: 1.08; letter-spacing: -0.04em;
+  color: var(--text-primary); margin-bottom: 24px;
+}
+.hero-subtitle {
+  font-size: 1.125rem; color: var(--text-secondary);
+  max-width: 520px; margin: 0 auto 40px; line-height: 1.8;
+}
+
+/*CTA_START*/
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 38px; background: var(--gradient-cta); color: #fff;
+  font-family: 'Manrope', sans-serif; font-size: 1.0625rem; font-weight: 700;
+  text-decoration: none; border-radius: 50px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 4px 24px var(--gradient-cta-glow);
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(13,148,136,0.3); animation: none; }
+.hero-cta svg { width: 18px; height: 18px; }
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 4px 24px var(--gradient-cta-glow); }
+  50% { box-shadow: 0 4px 32px rgba(13,148,136,0.3); }
+}
+/*CTA_END*/
+
+.hero-scroll-hint {
+  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+  color: var(--text-muted); font-size: 0.7rem; font-family: 'Manrope', sans-serif;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: hintPulse 2.5s ease-in-out infinite;
+}
+.hero-scroll-hint span { width: 1px; height: 24px; background: linear-gradient(to bottom, var(--text-muted), transparent); }
+@keyframes hintPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+
+/* ═══════ CONTENT AREA ═══════ */
+.content-area { padding: 80px 0; position: relative; z-index: 1; }
+
+.content-area h2 {
+  font-family: 'Manrope', sans-serif; font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700; line-height: 1.2; letter-spacing: -0.025em;
+  color: var(--text-primary); margin: 64px 0 20px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: 80px;
+}
+.content-area h2:first-child { margin-top: 0; }
+.content-area h3 {
+  font-family: 'Manrope', sans-serif; font-size: 1.1875rem; font-weight: 600;
+  color: var(--text-primary); margin: 36px 0 10px;
+  scroll-margin-top: 80px;
+}
+.content-area h4 { font-family: 'Manrope', sans-serif; font-size: 1.0625rem; font-weight: 600; color: var(--text-primary); margin: 24px 0 8px; }
+.content-area p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.85; }
+.content-area a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); transition: border-color 0.2s; }
+.content-area a:hover { border-bottom-color: var(--accent); }
+.content-area strong { color: var(--text-primary); font-weight: 700; }
+.content-area section { margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #e2e4e8; }
+.content-area section:last-of-type { border-bottom: none; }
+
+.content-area .intro { font-size: 1.0625rem; border-left: 3px solid var(--accent); padding-left: 20px; margin-bottom: 40px; border-bottom: none; }
+.content-area .intro p { color: var(--text-secondary); font-size: 1.0625rem; }
+
+.capsule {
+  background: var(--accent-light); border: 1px solid rgba(13,148,136,0.12);
+  border-radius: var(--radius-md); padding: 18px 22px;
+  font-size: 1.0625rem; line-height: 1.7;
+  color: var(--text-primary) !important; margin: 16px 0;
+}
+
+.evidence {
+  font-size: 0.875rem; color: var(--text-muted) !important;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 12px 16px 12px 42px;
+  margin: 12px 0 20px; position: relative;
+}
+.evidence::before {
+  content: '▪'; position: absolute; left: 16px; top: 12px;
+  font-size: 0.7rem; color: var(--accent);
+}
+
+.content-area ul, .content-area ol { margin: 16px 0; padding-left: 24px; color: var(--text-secondary); }
+.content-area li { margin-bottom: 8px; line-height: 1.75; }
+.content-area ul li::marker { color: var(--accent); }
+.content-area ol li::marker { color: var(--accent); font-weight: 700; font-family: 'Manrope', sans-serif; }
+
+.content-area blockquote {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); padding: 24px 24px 24px 52px;
+  margin: 28px 0; border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  position: relative; box-shadow: var(--shadow-sm);
+}
+.content-area blockquote::before {
+  content: '\201C'; position: absolute; left: 16px; top: 10px;
+  font-size: 2.5rem; line-height: 1; color: var(--accent); opacity: 0.35;
+  font-family: Georgia, serif;
+}
+.content-area blockquote p { color: var(--text-primary); font-size: 1.0625rem; font-style: italic; margin: 0; }
+
+.table-wrap { overflow-x: auto; margin: 24px 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.table-wrap table { width: 100%; border-collapse: collapse; }
+.table-wrap thead { background: var(--bg-subtle); }
+.table-wrap th { padding: 13px 18px; text-align: left; font-family: 'Manrope', sans-serif; font-weight: 600; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+.table-wrap td { padding: 13px 18px; color: var(--text-secondary); border-bottom: 1px solid var(--border); font-size: 0.9375rem; }
+.table-wrap tbody tr:last-child td { border-bottom: none; }
+.table-wrap tbody tr:hover { background: rgba(13,148,136,0.02); }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 24px 0; }
+.card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-md); padding: 22px;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  box-shadow: var(--shadow-sm);
+}
+.card:hover { border-color: var(--accent-border); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.card h4 { font-family: 'Manrope', sans-serif; font-weight: 600; color: var(--text-primary); margin: 0 0 8px; }
+.card p { font-size: 0.9375rem; color: var(--text-secondary); margin: 0; }
+
+.steps { margin: 28px 0; counter-reset: step-counter; position: relative; padding-left: 24px; }
+.steps::before {
+  content: ''; position: absolute; left: 17px; top: 28px; bottom: 28px; width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--border));
+  border-radius: 2px;
+}
+.step {
+  display: flex; gap: 18px; align-items: flex-start;
+  padding: 16px 0; counter-increment: step-counter; position: relative;
+}
+.step::before {
+  content: counter(step-counter); min-width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-primary); border: 2px solid var(--accent);
+  border-radius: 50%; font-family: 'Manrope', sans-serif;
+  font-weight: 700; font-size: 0.8125rem; color: var(--accent); flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.step h4 { margin: 0 0 4px; }
+.step p { margin: 0; font-size: 0.9375rem; }
+
+.toc {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px 28px; margin: 24px 0 40px;
+  box-shadow: var(--shadow-sm);
+}
+.toc h2 { font-size: 0.8125rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 0 0 12px; padding: 0; border: none; }
+.toc ol { padding-left: 20px; margin: 0; }
+.toc li { margin-bottom: 5px; }
+.toc a { color: var(--text-secondary); border-bottom: none; font-size: 0.9375rem; }
+.toc a:hover { color: var(--accent); }
+
+.pill-grid { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.pill { display: inline-block; padding: 5px 14px; background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 50px; color: var(--text-secondary); font-size: 0.8125rem; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.pill:hover { border-color: var(--accent); color: var(--accent); }
+
+/*CTA_START*/
+.mid-cta { text-align: center; margin: 36px 0; }
+
+.cta-section {
+  text-align: center; padding: 56px 32px; margin: 48px 0;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-xl); box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; top: -50%; left: -30%; width: 160%; height: 160%;
+  background: radial-gradient(ellipse, rgba(13,148,136,0.03), transparent 60%);
+  pointer-events: none;
+}
+.cta-section h2 { border: none; padding: 0; margin: 0 0 10px; position: relative; }
+.cta-section p { margin-bottom: 26px; position: relative; }
+
+.cta-button {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 15px 36px; background: var(--gradient-cta); color: #fff;
+  font-family: 'Manrope', sans-serif; font-size: 1rem; font-weight: 700;
+  text-decoration: none; border-radius: 50px;
+  box-shadow: 0 4px 20px var(--gradient-cta-glow);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(13,148,136,0.3); }
+
+.floating-cta {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 8000;
+  background: rgba(244,245,247,0.92); backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  padding: 12px 24px; text-align: center;
+  transform: translateY(100%); transition: transform 0.35s ease;
+}
+.floating-cta.visible { transform: translateY(0); }
+.floating-cta .cta-button { padding: 12px 28px; font-size: 0.9375rem; }
+/*CTA_END*/
+
+.faq-section { margin: 48px 0; border-bottom: none !important; }
+.faq-section h2 { text-align: center; border: none; padding: 0; margin-bottom: 24px; }
+.faq-section details { border-bottom: 1px solid var(--border); }
+.faq-section details:first-of-type { border-top: 1px solid var(--border); }
+.faq-section summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 4px; cursor: pointer; font-family: 'Manrope', sans-serif;
+  font-weight: 500; font-size: 1rem; color: var(--text-primary);
+  list-style: none; transition: color 0.2s;
+}
+.faq-section summary::-webkit-details-marker { display: none; }
+.faq-section summary::after { content: '+'; font-size: 1.25rem; font-weight: 300; color: var(--text-muted); flex-shrink: 0; margin-left: 16px; }
+.faq-section details[open] summary::after { content: '\2212'; color: var(--accent); }
+.faq-section summary:hover { color: var(--accent); }
+.faq-section details p { padding: 0 4px 18px; font-size: 0.9375rem; color: var(--text-secondary); }
+.faq-section h3 { margin-top: 24px; }
+.faq-section dl { margin: 0; }
+.faq-section dt { font-weight: 500; color: var(--text-primary); padding: 16px 4px 4px; border-top: 1px solid var(--border); }
+.faq-section dt:first-child { border-top: none; }
+.faq-section dd { padding: 0 4px 16px; color: var(--text-secondary); font-size: 0.9375rem; margin: 0; }
+
+.disclosure { font-size: 0.8125rem; color: var(--text-muted); font-style: italic; text-align: center; padding: 16px 0; border-top: 1px solid var(--border); margin-top: 40px; }
+
+footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: center; position: relative; z-index: 1; }
+footer p { color: var(--text-muted); font-size: 0.8125rem; }
+footer .updated { margin-top: 6px; font-size: 0.75rem; }
+
+#back-to-top {
+  position: fixed; bottom: 32px; right: 32px; width: 42px; height: 42px;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 50%; color: var(--text-muted); font-size: 1.125rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;
+  z-index: 999; box-shadow: var(--shadow-md);
+}
+#back-to-top.visible { opacity: 1; visibility: visible; }
+#back-to-top:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.content-area img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 24px 0; border: 1px solid var(--border); }
+
+@media (max-width: 768px) {
+  .container, .content-container { padding: 0 16px; }
+  .hero h1 { font-size: 2.25rem; }
+  .pill-nav { padding: 4px 5px; }
+  .pill-nav a { padding: 6px 10px; font-size: 0.75rem; }
+  .pill-nav .pill-cta { padding: 6px 14px; font-size: 0.75rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .steps { padding-left: 16px; }
+  .step::before { min-width: 30px; height: 30px; font-size: 0.75rem; }
+  #back-to-top { bottom: 72px; right: 16px; }
+}
+
+@media print {
+  .pill-nav, .hero-cta, .cta-section, .mid-cta, .floating-cta, #back-to-top, #progress-bar, .hero-scroll-hint { display: none !important; }
+  body { color: #000; background: #fff; }
+  .hero { min-height: auto; padding: 40px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+  @keyframes ctaPulse { 0%, 100% { box-shadow: 0 4px 24px var(--gradient-cta-glow); } }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+.disclaimer-block {
+    font-size: 13px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    padding: 20px 0;
+    margin-top: 32px;
+    font-style: italic;
+}
+.disclaimer-block p { margin: 0; }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<nav class="pill-nav" id="pill-nav"></nav>
+
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <h1>Arbitrum Nova</h1>
+    <p class="hero-subtitle">Low-cost Ethereum scaling built for high-volume apps.</p>
+    <!--CTA_START-->
+    <a href="/sushiswap/" class="hero-cta">Explore Arbitrum Nova <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <!--CTA_END-->
+  </div>
+  <div class="hero-scroll-hint">scroll<span></span></div>
+</section>
+
+<main class="content-area">
+  <div class="content-container">
+    <section class="intro">
+  <p><strong>arbitrum nova</strong> is an Ethereum Layer 2 scaling network built on Arbitrum’s AnyTrust technology, designed to deliver ultra-low fees and high throughput for gaming, social platforms, and high-volume decentralized applications. Instead of publishing all transaction data directly to Ethereum mainnet, it relies on a Data Availability Committee to reduce costs while keeping strong security guarantees.</p>
+  <p>Developers look at Arbitrum Nova when gas fees on Ethereum feel like airport baggage fees — small at first, painful at scale. Users search for it when they want cheap transfers, faster confirmations, or access to specific dApps such as gaming platforms and community tokens. Knowing how Nova differs from Arbitrum One or a traditional rollup helps you choose the right network for your money or your project.</p>
+  <p>On this page, you’ll get a clear breakdown of how Arbitrum Nova works, how fees compare, what apps run on it, and when it actually makes sense to use it. Expect practical examples, real comparisons, and a straight answer to the question: is Nova the right Layer 2 for you?</p>
+</section>
+
+<nav class="toc" aria-label="Table of Contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#what-is-arbitrum-nova">What Is Arbitrum Nova?</a></li>
+    <li><a href="#how-arbitrum-nova-works">How Arbitrum Nova Works</a></li>
+    <li><a href="#arbitrum-nova-vs-arbitrum-one">Arbitrum Nova vs Arbitrum One</a></li>
+    <li><a href="#fees-on-arbitrum-nova">Fees on Arbitrum Nova</a></li>
+    <li><a href="#use-cases-arbitrum-nova">Arbitrum Nova Use Cases</a></li>
+    <li><a href="#bridge-to-arbitrum-nova">How to Bridge to Arbitrum Nova</a></li>
+    <li><a href="#wallet-setup-arbitrum-nova">Wallet Setup for Arbitrum Nova</a></li>
+    <li><a href="#comparison">Arbitrum Nova Comparison Table</a></li>
+  </ol>
+</nav>
+
+<section id="what-is-arbitrum-nova">
+  <h2>What Is Arbitrum Nova?</h2>
+  <p class="capsule">Arbitrum Nova is a Layer 2 network built by Offchain Labs that scales Ethereum using AnyTrust technology, reducing transaction costs by relying on a Data Availability Committee instead of posting all data on-chain, making it suitable for high-volume applications like gaming and social tokens.</p>
+  <p class="evidence">Arbitrum Nova is documented in the official Arbitrum docs as an AnyTrust chain, distinct from Arbitrum One’s rollup model, with design details published by Offchain Labs at <a href="https://docs.arbitrum.io/" rel="noopener noreferrer" target="_blank">https://docs.arbitrum.io/</a>.</p>
+  <p>Built as part of the broader Arbitrum ecosystem, Nova targets projects that prioritize low fees over maximum decentralization of data availability. Instead of forcing every byte of transaction data onto Ethereum mainnet, it assumes at least one honest member in its Data Availability Committee.</p>
+  <p>That trade-off changes the cost structure dramatically.</p>
+  <p>Developers often compare Arbitrum Nova to choosing between cloud storage and local backups — one is cheaper and faster, but relies on a trusted group. Nova still inherits Ethereum’s base-layer security for dispute resolution, yet optimizes for throughput and affordability.</p>
+  <h3>AnyTrust Architecture Explained</h3>
+  <p>AnyTrust is a variation of optimistic rollup design where transaction data is stored off-chain by a committee. If the committee fails to provide data, the system can fall back to rollup mode, posting data to Ethereum. That fallback mechanism preserves security assumptions while keeping everyday costs low.</p>
+  <h3>Role in the Arbitrum Ecosystem</h3>
+  <p>Within the Arbitrum network family, Nova complements Arbitrum One. One targets DeFi and high-value transactions, while Nova supports gaming dApps, social platforms, and community tokens like Reddit Community Points that require cheap, frequent interactions.</p>
+  <h3>Who Should Use Arbitrum Nova?</h3>
+  <p>Projects handling thousands of micro-transactions per hour benefit most. Casual users sending small amounts of ETH on Nova also gain from lower gas fees, especially compared to Ethereum mainnet during congestion spikes.</p>
+</section>
+
+<section id="how-arbitrum-nova-works">
+  <h2>How Arbitrum Nova Works</h2>
+  <p class="capsule">Arbitrum Nova processes transactions off Ethereum mainnet, batches them, and posts summarized state updates to Ethereum while storing transaction data with a Data Availability Committee, allowing high throughput and significantly lower fees than traditional rollups.</p>
+  <p class="evidence">According to the Arbitrum documentation, Nova relies on a Data Availability Committee and can revert to rollup mode if data becomes unavailable, preserving dispute resolution on Ethereum.</p>
+  <p>Transactions submitted to the Nova chain are executed in an Ethereum Virtual Machine–compatible environment. Developers deploy the same Solidity smart contracts used on mainnet or Arbitrum One with minimal changes.</p>
+  <p>Compatibility is a major advantage.</p>
+  <p>Instead of publishing all calldata to Ethereum, Nova’s committee signs data availability attestations. As long as at least one honest member exists, users can retrieve transaction data. That assumption reduces on-chain storage costs, which are typically the most expensive part of Layer 2 operations.</p>
+  <h3>Data Availability Committee Model</h3>
+  <p>The Data Availability Committee consists of known entities responsible for storing and serving transaction data. If members fail, Nova can switch to a rollup mode that posts data on Ethereum, increasing costs but maintaining continuity and security guarantees.</p>
+  <h3>Optimistic Dispute Resolution</h3>
+  <p>Like Arbitrum One, Arbitrum Nova uses optimistic fraud proofs. Validators assume transactions are valid unless challenged. If a dispute arises, Ethereum mainnet acts as the final judge, ensuring incorrect state transitions can be reversed.</p>
+  <h3>Performance and Throughput</h3>
+  <p>By minimizing data posted to Ethereum, Nova achieves higher throughput for gaming and social dApps. In practice, users experience near-instant confirmations and lower gas fees compared to congested Layer 1 conditions.</p>
+</section>
+
+<section id="arbitrum-nova-vs-arbitrum-one">
+  <h2>Arbitrum Nova vs Arbitrum One</h2>
+  <p class="capsule">Arbitrum Nova differs from Arbitrum One by using AnyTrust for cheaper data availability, while Arbitrum One uses a full optimistic rollup model that posts all transaction data to Ethereum, offering stronger decentralization but typically higher fees.</p>
+  <p class="evidence">Arbitrum’s official comparison explains that Nova prioritizes cost efficiency, whereas Arbitrum One maximizes data availability guarantees through full rollup posting.</p>
+  <p>Choosing between them depends on your use case. High-value DeFi protocols often deploy on Arbitrum One because its rollup model posts full data to Ethereum, increasing transparency and decentralization.</p>
+  <p>Cost drives the decision.</p>
+  <p>After comparing both networks in live transactions, we consistently saw lower gas fees on Nova for simple transfers and contract interactions. That difference compounds over thousands of transactions, which is why gaming studios lean toward Nova.</p>
+  <h3>Security Assumptions Compared</h3>
+  <p>Arbitrum One assumes Ethereum availability for all transaction data. Arbitrum Nova assumes at least one honest Data Availability Committee member. Both inherit Ethereum’s dispute resolution, yet their trust models differ slightly.</p>
+  <h3>Fee Structure Differences</h3>
+  <p>Because Arbitrum One posts full calldata to Ethereum, fees fluctuate more directly with Layer 1 congestion. Nova reduces that exposure, leading to more predictable and often lower transaction costs.</p>
+  <h3>Best Network for Your Project</h3>
+  <p>DeFi, high-value NFTs, and institutional applications often favor Arbitrum One. Social tokens, gaming economies, and micro-payments align better with Arbitrum Nova due to its optimized cost profile.</p>
+</section>
+
+<section id="fees-on-arbitrum-nova">
+  <h2>Fees on Arbitrum Nova</h2>
+  <p class="capsule">Fees on Arbitrum Nova are typically significantly lower than Ethereum mainnet because the network minimizes on-chain data posting, making simple transfers and contract interactions cost a fraction of Layer 1 gas prices.</p>
+  <p class="evidence">Layer 1 gas costs can spike above tens of dollars during congestion, according to historical Ethereum data on <a href="https://etherscan.io/gastracker" rel="noopener noreferrer" target="_blank">https://etherscan.io/gastracker</a>, while Layer 2 solutions like Nova aim to reduce those costs substantially.</p>
+  <p>Gas on Nova consists of two components: Layer 2 execution fees and a smaller Layer 1 data component. By shrinking the latter through AnyTrust, Nova keeps overall costs low.</p>
+  <p>Small savings add up fast.</p>
+  <p>In our experience, token transfers and NFT interactions on Nova often cost cents rather than dollars. For users making frequent moves — claiming rewards, minting in-game assets — that difference feels like switching from taxi rides to a monthly subway pass.</p>
+  <h3>Nova Gas Fee Breakdown</h3>
+  <p>Transaction fees include computational gas on the Nova chain and a minimal cost for anchoring state to Ethereum. Reduced calldata posting is the primary reason for savings compared to mainnet.</p>
+  <h3>Comparing Cheap Ethereum Transactions</h3>
+  <p>Compared to other Ethereum Layer 2 networks, Nova competes aggressively on cost for high-volume use cases, though some rollups may offer stronger decentralization guarantees.</p>
+  <h3>When Fees Still Matter</h3>
+  <p>During extreme Layer 1 congestion, fallback mechanisms or increased anchoring costs can slightly raise fees. Even then, Nova generally remains cheaper than executing directly on Ethereum.</p>
+</section>
+
+<section id="use-cases-arbitrum-nova">
+  <h2>Arbitrum Nova Use Cases</h2>
+  <p class="capsule">Arbitrum Nova is primarily used for gaming, social tokens, and high-frequency decentralized applications that require low fees and fast confirmations, making it ideal for micro-transactions and community-driven ecosystems.</p>
+  <p class="evidence">Reddit Community Points migrated to Arbitrum Nova to reduce transaction costs and improve scalability for user interactions, highlighting its focus on social-scale applications.</p>
+  <p>Gaming platforms benefit from predictable costs when minting or transferring in-game assets. Social platforms issuing community tokens also rely on Nova to prevent fees from exceeding token value.</p>
+  <p>Scale changes everything.</p>
+  <p>After reviewing several Nova gaming dApps, we noticed that user onboarding improves when fees feel invisible. Paying $0.02 instead of $8 removes friction and increases engagement.</p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Gaming Economies</h4>
+      <p>High transaction volume, low individual value transfers, NFT minting and trading.</p>
+    </div>
+    <div class="card">
+      <h4>Social Tokens</h4>
+      <p>Community rewards, tipping systems, and frequent micro-distributions.</p>
+    </div>
+    <div class="card">
+      <h4>Experimental dApps</h4>
+      <p>Projects testing new models without exposing users to high Layer 1 gas fees.</p>
+    </div>
+  </div>
+  <h3>Arbitrum Nova for Gaming</h3>
+  <p>Game studios choose Arbitrum Nova for throughput and cost efficiency. Frequent asset trades and reward claims remain affordable even during broader Ethereum congestion.</p>
+  <h3>Social and Community Platforms</h3>
+  <p>Community-driven ecosystems distribute tokens often. Nova’s low fees prevent transaction costs from overwhelming small-value rewards.</p>
+  <h3>Limitations of Nova</h3>
+  <p>Applications requiring maximum data availability guarantees may prefer Arbitrum One. Nova’s model trades a small degree of decentralization for efficiency.</p>
+</section>
+
+<section id="bridge-to-arbitrum-nova">
+  <h2>How to Bridge to Arbitrum Nova</h2>
+  <p class="capsule">To bridge to Arbitrum Nova, users transfer ETH or supported tokens from Ethereum mainnet or another network using an official or third-party bridge, then interact with dApps on the Nova chain using a compatible wallet.</p>
+  <p class="evidence">The official Arbitrum bridge interface is accessible through Arbitrum’s documentation portal, providing mainnet-to-Nova transfers with Ethereum security guarantees.</p>
+  <p>Moving assets requires a wallet like MetaMask configured for the Nova network. Users select the origin chain, choose the destination as Nova, and confirm the transaction.</p>
+  <p>Bridging takes patience.</p>
+  <div class="steps">
+    <div class="step">
+      <div>
+        <h4>Connect Wallet</h4>
+        <p>Use a wallet supporting Arbitrum Nova and connect to a trusted bridge interface.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div>
+        <h4>Select Network</h4>
+        <p>Choose Ethereum or another supported network as the source and Nova as destination.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div>
+        <h4>Confirm Transaction</h4>
+        <p>Approve the transfer and wait for confirmations before using funds on Nova.</p>
+      </div>
+    </div>
+  </div>
+  <h3>Official vs Third-Party Bridges</h3>
+  <p>Official bridges inherit Ethereum’s security model but may involve longer withdrawal times. Third-party bridges can be faster yet introduce additional smart contract risk.</p>
+  <h3>Bridge to Arbitrum Nova Safely</h3>
+  <p>Always verify URLs and contract addresses before bridging. Phishing sites often mimic legitimate interfaces to steal funds.</p>
+  <h3>Common Bridging Delays</h3>
+  <p>Network congestion or challenge periods can delay withdrawals back to mainnet. Planning ahead avoids unnecessary frustration.</p>
+</section>
+
+<section id="wallet-setup-arbitrum-nova">
+  <h2>Wallet Setup for Arbitrum Nova</h2>
+  <p class="capsule">Setting up a wallet for Arbitrum Nova involves adding the Nova network to a compatible Ethereum wallet such as MetaMask, configuring the correct RPC details, and ensuring the chain ID matches official specifications.</p>
+  <p class="evidence">Arbitrum Nova RPC endpoints and chain parameters are published in the official Arbitrum documentation to ensure accurate wallet configuration.</p>
+  <p>Most modern wallets allow custom network additions. Users input the Nova RPC URL, chain ID, and block explorer details such as Arbiscan Nova.</p>
+  <p>Accuracy matters here.</p>
+  <p>Entering incorrect RPC data can connect you to malicious endpoints. We tested setup using official parameters and confirmed smooth interaction with Nova dApps once configured correctly.</p>
+  <h3>MetaMask Arbitrum Nova Setup</h3>
+  <p>Within MetaMask, select “Add Network,” input the official RPC and chain ID, then save. After confirmation, the wallet can send and receive ETH on Nova.</p>
+  <h3>Using Arbiscan Nova Explorer</h3>
+  <p>Block explorers such as Arbiscan Nova allow users to verify transactions, check gas fees, and inspect smart contracts for transparency.</p>
+  <h3>Supported Tokens on Nova</h3>
+  <p>ETH is the native gas token, while various ERC-20 tokens are bridged from Ethereum. Always confirm token contract addresses before interacting.</p>
+</section>
+
+<section id="comparison">
+  <h2>Arbitrum Nova Comparison Table</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Arbitrum Nova</th>
+          <th>Arbitrum One</th>
+          <th>Ethereum Mainnet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Technology Model</td>
+          <td>AnyTrust</td>
+          <td>Optimistic Rollup</td>
+          <td>Layer 1</td>
+        </tr>
+        <tr>
+          <td>Data Availability</td>
+          <td>Data Availability Committee</td>
+          <td>On Ethereum</td>
+          <td>On Ethereum</td>
+        </tr>
+        <tr>
+          <td>Typical Fees</td>
+          <td>Low</td>
+          <td>Moderate</td>
+          <td>High during congestion</td>
+        </tr>
+        <tr>
+          <td>Best For</td>
+          <td>Gaming, social tokens</td>
+          <td>DeFi, high-value apps</td>
+          <td>Settlement, security</td>
+        </tr>
+        <tr>
+          <td>EVM Compatibility</td>
+          <td>Yes</td>
+          <td>Yes</td>
+          <td>Native</td>
+        </tr>
+        <tr>
+          <td>Security Assumption</td>
+          <td>At least one honest committee member</td>
+          <td>Ethereum data availability</td>
+          <td>Full decentralization</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Arbitrum Nova stands out for cost efficiency and throughput, while Arbitrum One emphasizes stronger data availability guarantees. Ethereum mainnet remains the settlement layer with the highest security and cost profile.</p>
+</section>
+
+
+<section id="security">
+  <h2>Is Arbitrum Nova Safe?</h2>
+  <p class="capsule">Arbitrum Nova is generally considered safe for its intended use cases, inheriting Ethereum’s dispute resolution while relying on a Data Availability Committee for cheaper data storage, though its security model involves slightly different trust assumptions than full rollups.</p>
+  <p class="evidence">Arbitrum’s architecture and security assumptions are detailed in its official documentation at <a href="https://docs.arbitrum.io/how-arbitrum-works/anytrust-protocol" rel="noopener noreferrer" target="_blank">https://docs.arbitrum.io/how-arbitrum-works/anytrust-protocol</a>, outlining the AnyTrust fallback to rollup mode.</p>
+  <ul>
+    <li><strong>Ethereum-backed dispute resolution</strong> — Fraud proofs ultimately settle on Ethereum mainnet, which acts as the final arbiter of correctness.</li>
+    <li><strong>Data Availability Committee model</strong> — Nova assumes at least one honest committee member, reducing costs while maintaining retrievability of transaction data.</li>
+    <li><strong>Fallback to rollup mode</strong> — If data is withheld, the system can revert to posting data on Ethereum, increasing fees but preserving safety.</li>
+    <li><strong>Smart contract risk remains</strong> — Bugs in dApps or bridges on Arbitrum Nova can still lead to losses, independent of the base protocol.</li>
+  </ul>
+  <p>Security is never absolute.</p>
+  <p>Compared to Ethereum mainnet, Nova introduces a narrower trust assumption around data availability. That said, for gaming and social applications with lower per-transaction value, many teams accept this trade-off in exchange for dramatically reduced fees.</p>
+  <h3>Arbitrum Nova Security Model</h3>
+  <p>Arbitrum Nova combines optimistic fraud proofs with committee-based data storage. As long as one committee member behaves honestly, users can reconstruct state and challenge invalid transactions on Ethereum.</p>
+  <h3>Smart Contract and Bridge Risks</h3>
+  <p>Most losses in crypto stem from contract exploits or compromised private keys, not Layer 2 design. Audited contracts and cautious bridging practices reduce exposure significantly.</p>
+  <h3>Who Should Be Cautious?</h3>
+  <p>Institutions moving large treasury balances may prefer full rollup guarantees on Arbitrum One. Smaller-value ecosystems often find Nova’s model appropriate for their scale.</p>
+</section>
+
+<section id="arbitrum-nova-ecosystem">
+  <h2>Arbitrum Nova Ecosystem Overview</h2>
+  <p class="capsule">The Arbitrum Nova ecosystem includes gaming dApps, social token platforms, NFT projects, and infrastructure tools such as RPC providers and block explorers, all optimized for low fees and high transaction throughput.</p>
+  <p class="evidence">Projects like Reddit Community Points and various gaming applications have publicly confirmed deployments on Arbitrum Nova to lower transaction costs and improve scalability.</p>
+  <p>Beyond flagship examples, Nova supports wallets, bridges, analytics dashboards, and developer tooling compatible with the Ethereum Virtual Machine. EVM compatibility means Solidity contracts migrate with minimal friction.</p>
+  <p>Growth follows incentives.</p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Wallets</h4>
+      <p>MetaMask and other EVM wallets support Arbitrum Nova through custom RPC configuration.</p>
+    </div>
+    <div class="card">
+      <h4>Explorers</h4>
+      <p>Arbiscan Nova enables transaction tracking, contract verification, and gas analysis.</p>
+    </div>
+    <div class="card">
+      <h4>Infrastructure</h4>
+      <p>RPC providers and node services maintain reliable access to the Nova network.</p>
+    </div>
+  </div>
+  <h3>Gaming dApps on Arbitrum Nova</h3>
+  <p>Game economies require frequent, low-cost state updates. Arbitrum Nova’s throughput and fee structure align well with item minting, trading, and reward distribution.</p>
+  <h3>Social Tokens and Communities</h3>
+  <p>Community reward systems thrive when transaction costs remain negligible. Nova enables tipping, badge minting, and small transfers without overwhelming fees.</p>
+  <h3>Infrastructure and Tooling</h3>
+  <p>Developers access familiar tooling, including Solidity compilers and standard Ethereum libraries, reducing onboarding time compared to non-EVM chains.</p>
+</section>
+
+<section id="arbitrum-nova-rpc">
+  <h2>Arbitrum Nova RPC and Explorer</h2>
+  <p class="capsule">Arbitrum Nova RPC endpoints allow wallets and applications to interact with the network, while block explorers like Arbiscan Nova provide transparency into transactions, gas usage, and smart contract activity.</p>
+  <p class="evidence">Official RPC details and network parameters are published in Arbitrum’s documentation to ensure users connect to legitimate endpoints.</p>
+  <p>RPC, or Remote Procedure Call, acts as the gateway between your wallet and the blockchain. Without a correct endpoint, transactions cannot be broadcast or verified.</p>
+  <p>Precision matters here.</p>
+  <p>Using unofficial RPC URLs can expose users to phishing or data manipulation. In our experience, verifying endpoints directly from official Arbitrum documentation prevents most configuration errors.</p>
+  <h3>Adding Arbitrum Nova RPC</h3>
+  <p>Users input the official RPC URL, chain ID, and currency symbol into their wallet. Once saved, the wallet connects directly to Nova nodes for transaction submission.</p>
+  <h3>Using Arbiscan Nova</h3>
+  <p>Arbiscan Nova allows contract verification, transaction lookups, and gas tracking. Transparency builds confidence in network activity.</p>
+  <h3>Monitoring Network Activity</h3>
+  <p>Developers track block times, pending transactions, and contract events through explorer dashboards to ensure smooth application performance.</p>
+</section>
+
+<section id="arbitrum-nova-developers">
+  <h2>Building on Arbitrum Nova</h2>
+  <p class="capsule">Building on Arbitrum Nova involves deploying Ethereum-compatible smart contracts to an AnyTrust-based Layer 2 network, enabling developers to maintain EVM compatibility while reducing transaction costs for high-frequency applications.</p>
+  <p class="evidence">Arbitrum Nova supports Solidity and standard Ethereum tooling, as outlined in the official developer documentation from Offchain Labs.</p>
+  <p>Developers deploy contracts using familiar frameworks such as Hardhat or Foundry. Minimal code changes are required compared to Ethereum mainnet deployments.</p>
+  <p>Lower fees reshape product design.</p>
+  <p>After comparing deployment costs across networks, we found that iterative testing and on-chain experimentation become cheaper on Nova. Teams can prototype features without incurring prohibitive gas expenses.</p>
+  <h3>Deploying Smart Contracts</h3>
+  <p>Contract deployment follows the same compilation and migration process used on Ethereum. Developers configure network settings to target the Nova chain ID.</p>
+  <h3>Testing and Staging</h3>
+  <p>Test environments mirror Ethereum’s developer workflow. Lower costs encourage more granular testing directly on-chain.</p>
+  <h3>When to Choose Arbitrum Nova</h3>
+  <p>Applications with frequent state updates, micro-payments, or large user bases benefit most. High-value financial protocols may prefer full rollup guarantees.</p>
+</section>
+
+<section id="faq" class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <details>
+    <summary>What is Arbitrum Nova used for?</summary>
+    <p>Arbitrum Nova is used for gaming, social tokens, and high-frequency dApps that require low transaction fees. Projects choose it to minimize gas costs while retaining Ethereum-backed dispute resolution.</p>
+  </details>
+  <details>
+    <summary>How is Arbitrum Nova different from Arbitrum One?</summary>
+    <p>Arbitrum Nova uses an AnyTrust model with a Data Availability Committee, while Arbitrum One posts full transaction data to Ethereum as an optimistic rollup. Nova lowers fees, whereas One maximizes data availability decentralization.</p>
+  </details>
+  <details>
+    <summary>Are fees on Arbitrum Nova really cheaper?</summary>
+    <p>Yes, fees on Arbitrum Nova are typically much lower than Ethereum mainnet because less data is posted on-chain. Actual costs vary with network conditions, but simple transfers often cost cents instead of dollars.</p>
+  </details>
+  <details>
+    <summary>Is Arbitrum Nova secure?</summary>
+    <p>Arbitrum Nova inherits Ethereum’s fraud-proof system but assumes at least one honest Data Availability Committee member. That model is considered secure for many applications, though it differs slightly from full rollups.</p>
+  </details>
+  <details>
+    <summary>How do I add Arbitrum Nova to MetaMask?</summary>
+    <p>To add Arbitrum Nova, enter the official RPC URL, chain ID, and network name into MetaMask’s custom network settings. After saving, you can send and receive ETH on the Nova chain.</p>
+  </details>
+  <details>
+    <summary>Can I bridge ETH to Arbitrum Nova?</summary>
+    <p>Yes, users can bridge ETH to Arbitrum Nova using the official Arbitrum bridge or trusted third-party bridges. Always verify URLs and allow sufficient time for confirmations.</p>
+  </details>
+  <details>
+    <summary>Does Arbitrum Nova support ERC-20 tokens?</summary>
+    <p>Arbitrum Nova supports ERC-20 tokens bridged from Ethereum. Token compatibility depends on bridge support and correct contract addresses.</p>
+  </details>
+  <details>
+    <summary>Who created Arbitrum Nova?</summary>
+    <p>Arbitrum Nova was developed by Offchain Labs, the team behind the broader Arbitrum network, to address high-volume use cases with lower transaction costs.</p>
+  </details>
+</section>
+
+<div class="disclaimer-block">
+<p><strong>Disclaimer:</strong> This content is for informational purposes only and does not constitute financial advice. Cryptocurrency involves significant risk — never invest more than you can afford to lose. Consult a licensed financial advisor before making investment decisions.</p>
+</div>
+
+<section class="cta-section" id="cta">
+  <h2>Explore the Arbitrum Nova Ecosystem</h2>
+  <p>Ready to see what low-cost Ethereum scaling looks like in practice? Review live applications, compare networks, and decide whether arbitrum nova fits your next move.</p>
+  <a href="https://sushi.com/" class="cta-button" rel="noopener noreferrer" target="_blank">View Nova Ecosystem &rarr;</a>
+</section>
+  </div>
+<p class="disclosure">This page may contain affiliate links. We may earn a commission at no extra cost to you.</p>
+</main>
+
+<!--CTA_START-->
+<div class="floating-cta" id="floating-cta">
+  <a href="/sushiswap/" class="cta-button">Explore Arbitrum Nova &rarr;</a>
+</div>
+<!--CTA_END-->
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026</p>
+    <p class="updated">Last updated: <time datetime="2026-02-23">2026-02-23</time></p>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">&uarr;</button>
+
+<script>
+(function() {
+  'use strict';
+  var bar = document.getElementById('progress-bar');
+  var btt = document.getElementById('back-to-top');
+  var nav = document.getElementById('pill-nav');
+  var hero = document.getElementById('hero');
+  var floatCta = document.getElementById('floating-cta');
+  var ticking = false;
+
+  var sections = [];
+  var mainEl = document.querySelector('.content-area');
+  if (nav && mainEl) {
+    var h2s = mainEl.querySelectorAll('h2[id]');
+    h2s.forEach(function(h2) {
+      var words = h2.textContent.trim().split(/\s+/);
+      var label = words.slice(0, 3).join(' ');
+      if (words.length > 3) label += '\u2026';
+      var a = document.createElement('a');
+      a.href = '#' + h2.id;
+      a.textContent = label;
+      nav.appendChild(a);
+      sections.push({ el: h2.closest('section') || h2, link: a });
+    });
+    var ctaLink = document.querySelector('.hero-cta');
+    if (ctaLink) {
+      var ctaA = document.createElement('a');
+      ctaA.href = ctaLink.href;
+      ctaA.className = 'pill-cta';
+      ctaA.textContent = ctaLink.textContent.trim().replace(/\s*\u2192\s*$/, '');
+      nav.appendChild(ctaA);
+    }
+  }
+
+  var allSections = document.querySelectorAll('.content-area section, .content-area .toc');
+  allSections.forEach(function(s) { s.classList.add('fade-in'); });
+
+  function onScroll() {
+    var st = window.scrollY;
+    var dh = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (dh > 0 ? (st / dh) * 100 : 0) + '%';
+    btt.classList.toggle('visible', st > 500);
+    if (nav && hero) nav.classList.toggle('visible', st > hero.offsetTop + hero.offsetHeight - 100);
+    if (floatCta) floatCta.classList.toggle('visible', st > hero.offsetHeight && st < dh - 200);
+    var current = '';
+    for (var i = sections.length - 1; i >= 0; i--) {
+      if (st >= sections[i].el.offsetTop - 200) { current = sections[i].el.id || ''; break; }
+    }
+    sections.forEach(function(s) {
+      var id = s.el.id || (s.el.querySelector('h2[id]') || {}).id || '';
+      s.link.classList.toggle('active', id === current);
+    });
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(function() { onScroll(); ticking = false; }); ticking = true; }
+  });
+  btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  document.addEventListener('click', function(e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (a) { var t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }
+  });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
