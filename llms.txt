@@ -1,0 +1,72 @@
+# Arbitrum Nova
+> An independent, non-custodial informational dashboard for Arbitrum Nova, an Ethereum layer-2 network built with Arbitrum Nitro’s AnyTrust mode.
+
+## What is Arbitrum Nova
+Arbitrum Nova is an EVM-equivalent Ethereum layer-2 chain designed for inexpensive, high-volume applications such as gaming, social products, and micropayments. It executes transactions with the Nitro stack and settles state commitments and disputes on Ethereum. Unlike Arbitrum One, Nova normally stores transaction data with an external Data Availability Committee instead of publishing all data to Ethereum, reducing costs but adding committee trust assumptions. The Arbitrum DAO is transitioning Nova to a minimized, maintenance-oriented state and encourages users and developers to migrate to Arbitrum One.
+
+## How it works
+1. A user connects an EVM wallet to chain ID 42170 and signs a transaction; the wallet retains control of its keys and assets.
+2. Nova’s sequencer orders and executes the transaction through Nitro, producing a rapid L2 confirmation.
+3. For data availability, the sequencer normally sends each batch to committee members and posts a signed data-availability certificate to Ethereum; full data can be posted instead as a fallback.
+4. Validators verify execution, while Ethereum contracts hold canonical bridge assets and adjudicate challenged state assertions.
+5. A canonical withdrawal to Ethereum becomes claimable after the optimistic challenge period; third-party bridges use different mechanisms and risks.
+
+## Key facts
+- Network type: Ethereum L2 using Nitro AnyTrust; commonly classified as an Optimium.
+- Mainnet chain ID: 42170, hexadecimal 0xA4BA.
+- Native gas currency: ETH; ARB is a governance token, not Nova’s gas token.
+- Public RPC: https://nova.arbitrum.io/rpc
+- The chain is EVM-equivalent and supports Ethereum accounts, Solidity contracts, and common token standards.
+- AnyTrust assumes at least two Data Availability Committee members are honest; certificates normally require N−1 signatures.
+- State correctness uses optimistic dispute mechanisms, with additional validator, sequencer, governance, and upgrade assumptions.
+- Canonical Ethereum withdrawals require an approximately seven-day challenge period before claiming.
+- As of July 2026, Nova remains operational during a migration window preceding maintenance-oriented minimization.
+- This dashboard is informational and non-custodial: it cannot access private keys, sign transactions, or hold funds.
+
+## Common questions
+### Is Arbitrum Nova safe?
+Nova inherits Ethereum settlement and Nitro fraud-proof protections but adds trust in its Data Availability Committee, sequencer, whitelisted validators, and upgrade governance. Users should review L2BEAT’s risk analysis and the official minimization notice before holding or moving assets.
+
+### Does the dashboard custody my crypto?
+No. It displays public network information; transactions require approval in the user’s own wallet.
+
+### What pays transaction fees?
+Fees are paid in ETH on Arbitrum Nova. The amount varies with execution, data costs, and network conditions.
+
+### How long do transactions take?
+Ordinary L2 transactions usually receive a fast sequencer confirmation, but Ethereum finality occurs later. Canonical withdrawals to Ethereum require roughly seven days plus claim transactions; third-party bridges may be faster but introduce separate providers and contracts.
+
+### Which assets and chains are supported?
+Nova supports ETH and EVM tokens, but bridge availability depends on the specific asset and route. Verify the token contract and current route in the Arbitrum Portal; MOON has no direct canonical Nova-to-Arbitrum-One path and must route through Ethereum.
+
+### How do I start?
+Add chain ID 42170 and the official RPC to an EVM wallet, then obtain ETH on Nova for gas. Because Nova is being minimized, current official guidance favors withdrawing or migrating to Arbitrum One rather than initiating new long-term deployments.
+
+### What are the main risks?
+Key risks include unavailable committee data, sequencer censorship or downtime, invalid state escaping challenge, malicious or rapid upgrades, bridge or application bugs, reduced infrastructure support, and signing a transaction on the wrong network.
+
+## App
+- Dashboard: https://arbitrum-nova.github.io/
+- App: https://arbitrum-nova.github.io/dashboard/
+
+## Official resources
+Arbitrum: https://arbitrum.io/
+Arbitrum documentation: https://docs.arbitrum.io/
+Chain information and RPC: https://docs.arbitrum.io/for-devs/dev-tools-and-resources/chain-info
+AnyTrust protocol: https://docs.arbitrum.io/how-arbitrum-works/deep-dives/anytrust-protocol
+Bridge guide: https://docs.arbitrum.io/arbitrum-bridge/quickstart
+Arbitrum Portal and bridge: https://portal.arbitrum.io/bridge
+Nova minimization FAQ: https://forum.arbitrum.foundation/t/minimizing-arbitrum-nova-faqs/30955
+Security audit reports: https://docs.arbitrum.io/audit-reports
+Nitro source code: https://github.com/OffchainLabs/nitro
+Nitro contracts: https://github.com/OffchainLabs/nitro-contracts
+Official X: https://x.com/arbitrum
+Network status: https://status.arbitrum.io/
+
+## Data & references
+L2BEAT risk analysis: https://l2beat.com/scaling/projects/nova
+Blockscout explorer: https://arbitrum-nova.blockscout.com/
+DeFiLlama chain data: https://defillama.com/chain/arbitrum-nova
+CoinGecko chain data: https://www.coingecko.com/en/chains/arbitrum-nova
+EIP-155 chain-ID standard: https://eips.ethereum.org/EIPS/eip-155
+Ethereum optimistic-rollup reference: https://ethereum.org/developers/docs/scaling/optimistic-rollups/
